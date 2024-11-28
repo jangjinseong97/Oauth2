@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true">
+    <conversionRule conversionWord="color" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <property name="LOG_PATH" value="./logs" />
+    <property name="LOG_FILE_NAME" value="logInfo" />
+    <property name="LOG_PATTERN_FILE" value="[%d{yyyy-MM-dd HH:mm:ss} %-5level%thread] [%logger] %msg%n" />
+    <property name="LOG_PATTERN_CONSOLE" value="[%d{yyyy-MM-dd HH:mm:ss} %color(%-5level){}%thread] %color([%logger]){cyan} %msg%n" />
+
+    <!-- 로그 파일 세팅 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${LOG_FILE_NAME}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${LOG_FILE_NAME}_%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 콘솔 세팅 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>${LOG_PATTERN_CONSOLE}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- TRACE > DEBUG > INFO > WARN > ERROR 5종류의 레벨
+    여기서 root level = "" 안에 적는 것 포함 아래의 로그들을 파일로 만들어지고 콘솔에 출력
+    예시로 INFO 입력시 INFO WARN ERROR 로그만 파일로 만들어지고 콘솔에 찍힘,-->
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>
