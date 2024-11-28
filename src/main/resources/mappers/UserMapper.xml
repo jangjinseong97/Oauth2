@@ -10,4 +10,10 @@
             nick_name = #{nickName},
             pic = #{pic}
     </insert>
+    <select id="selUserByUid">
+        select upw, user_id as userId, pic,
+        if(nick_name is null ,uid, nick_name) as nickName
+        from user
+        where uid = #{uid}
+    </select>
 </mapper>

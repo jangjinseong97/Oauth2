@@ -60,11 +60,3 @@ public class MyFileUtils {
         mf.transferTo(file); // MultipartFile 의 메소드
     }
 }
-
-class Test{
-    public static void main(String[] args) {
-        MyFileUtils mf = new MyFileUtils("C:\\Users\\jin\\Desktop\\test");
-        String rfn = mf.makeRandomFileName("15379_2468.jpg");
-        System.out.println(rfn);
-    }
-}
