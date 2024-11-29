@@ -3522,3 +3522,1912 @@ java.sql.SQLIntegrityConstraintViolationException: (conn=44) Cannot add or updat
  {executed in 6 msec}
 [2024-11-29 15:49:06 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
 [2024-11-29 15:49:06 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+[2024-11-29 15:51:57 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Starting GreenGramVer2Application using Java 17.0.13 with PID 11800 (D:\Students\jang jin seong\GreenGramVer2\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramVer2)
+[2024-11-29 15:51:57 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] No active profile set, falling back to 1 default profile: "default"
+[2024-11-29 15:51:57 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-11-29 15:51:57 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-11-29 15:51:58 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
+[2024-11-29 15:51:58 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:51:58 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+[2024-11-29 15:51:58 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
+[2024-11-29 15:51:58 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+[2024-11-29 15:51:58 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 791 ms
+[2024-11-29 15:51:58 INFO restartedMain] [com.green.greengramver2.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_ver2
+[2024-11-29 15:51:58 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
+[2024-11-29 15:51:59 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
+[2024-11-29 15:51:59 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:51:59 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
+[2024-11-29 15:51:59 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Started GreenGramVer2Application in 1.652 seconds (process running for 2.03)
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@2fcc3d19
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[2024-11-29 15:52:06 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select upw, user_id as userId, pic,
+        if(nick_name is null ,uid, nick_name) as nickName
+        from user
+        where uid = '11'
+ {executed in 0 msec}
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|upw                                                          |user_id |pic                                      |nickname |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|$2a$10$/FL2kogEtMKq8t2tv40iPuuSqwfb5dfNWzRU0jmMWJX2Q28/d8eJS |1       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |33       |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [com.green.greengramver2.user.UserService] com.green.greengramver2.user.model.UserSignInReq@7815a834
+[2024-11-29 15:52:06 INFO http-nio-8080-exec-1] [com.green.greengramver2.user.UserController] UserSignInRes(pic=null, nickName=null, userId=0, upw=null, msg=비밀번호 확인)
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select upw, user_id as userId, pic,
+        if(nick_name is null ,uid, nick_name) as nickName
+        from user
+        where uid = '11'
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|upw                                                          |user_id |pic                                      |nickname |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|$2a$10$/FL2kogEtMKq8t2tv40iPuuSqwfb5dfNWzRU0jmMWJX2Q28/d8eJS |1       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |33       |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-4] [com.green.greengramver2.user.UserService] com.green.greengramver2.user.model.UserSignInReq@5baeaf8f
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-4] [com.green.greengramver2.user.UserController] UserSignInRes(pic=2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg, nickName=33, userId=1, upw=$2a$10$/FL2kogEtMKq8t2tv40iPuuSqwfb5dfNWzRU0jmMWJX2Q28/d8eJS, msg=로그인 성공)
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [com.green.greengramver2.feed.model.FeedGetReq] FeedGetReq 1,null,1
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [com.green.greengramver2.feed.FeedController] feedC getFeedList p: FeedGetReq(signedUserId=1)
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = 1
+        ORDER BY a.feed_id DESC
+        LIMIT 0,20
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|feed_id |writer_user_id |writernm |pic                                      |contents |location |created_at          |islike |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|14      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:21 |1      |
+|13      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:14 |1      |
+|12      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:42:17 |1      |
+|11      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |123      |33123    |2024-11-29 10:42:01 |0      |
+|9       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |21123    |3        |2024-11-29 10:37:22 |0      |
+|7       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-28 17:20:59 |1      |
+|6       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |         |         |2024-11-28 17:15:01 |0      |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 14
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|a3709fe6-3e0d-4f04-8cef-1cc328c4fc0c.jpg |
+|ada457b9-68aa-4a78-b0c8-c5035af844e2.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 13
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|6fe5de58-57ef-47e7-80c7-49c0506ca143.jpg |
+|920ca8e8-5dc2-4844-aa7f-d7782e94d380.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 12
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|84e77be4-2b62-4f40-8f8b-0803e1080449.jpg |
+|84f31709-40aa-40eb-a7e7-da0219067927.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 11
+ {executed in 1 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3fc51a83-46ea-43ca-a85b-6fad4794a2bd.jpg |
+|49906eb9-a412-4428-a629-baccbe152c75.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 9
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|34669219-c5d3-4d84-a277-fd8c2b8bca4f.jpg |
+|f1ed44ba-1254-4232-9a0d-65037abe1e9c.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 7
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|14ecfa41-07fc-40d0-b50b-3fe95a840992.jpg |
+|2694c9a6-a7b3-4800-ac73-0c853e16a152.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:52:08 DEBUGhttp-nio-8080-exec-7] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 6
+ {executed in 0 msec}
+[2024-11-29 15:52:08 INFO http-nio-8080-exec-7] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3c31d519-96b0-49bd-8657-d1eac4fb3fc1.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:52:18 INFO http-nio-8080-exec-9] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=qrwzf, location=asef, writerUserId=0, feedId=0)
+[2024-11-29 15:52:18 INFO http-nio-8080-exec-9] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=qrwzf, location=asef, writerUserId=0, feedId=0)
+[2024-11-29 15:52:18 WARN http-nio-8080-exec-9] [org.mariadb.jdbc.message.server.ErrorPacket] Error: 1452-23000: Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+[2024-11-29 15:52:18 ERRORhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 0,
+            contents = 'qrwzf',
+            location = 'asef'
+ {FAILED after 1 msec}
+java.sql.SQLIntegrityConstraintViolationException: (conn=154) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:93)
+	at org.mariadb.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:276)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy83.insFeed(Unknown Source)
+	at com.green.greengramver2.feed.FeedService.postFeed(FeedService.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.green.greengramver2.feed.FeedService$$SpringCGLIB$$0.postFeed(<generated>)
+	at com.green.greengramver2.feed.FeedController.postFeed(FeedController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-29 15:52:18 ERRORhttp-nio-8080-exec-9] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: (conn=154) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+### The error may exist in file [D:\Students\jang jin seong\GreenGramVer2\build\resources\main\mappers\FeedMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into feed         set writer_user_id = ?,             contents = ?,             location = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: (conn=154) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+; (conn=154) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))] with root cause
+java.sql.SQLIntegrityConstraintViolationException: (conn=154) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:93)
+	at org.mariadb.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:276)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy83.insFeed(Unknown Source)
+	at com.green.greengramver2.feed.FeedService.postFeed(FeedService.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.green.greengramver2.feed.FeedService$$SpringCGLIB$$0.postFeed(<generated>)
+	at com.green.greengramver2.feed.FeedController.postFeed(FeedController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-29 15:56:30 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2024-11-29 15:56:30 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+[2024-11-29 15:56:32 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Starting GreenGramVer2Application using Java 17.0.13 with PID 12364 (D:\Students\jang jin seong\GreenGramVer2\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramVer2)
+[2024-11-29 15:56:32 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] No active profile set, falling back to 1 default profile: "default"
+[2024-11-29 15:56:32 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-11-29 15:56:32 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-11-29 15:56:33 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
+[2024-11-29 15:56:33 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:56:33 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+[2024-11-29 15:56:33 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
+[2024-11-29 15:56:33 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+[2024-11-29 15:56:33 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 845 ms
+[2024-11-29 15:56:33 INFO restartedMain] [com.green.greengramver2.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_ver2
+[2024-11-29 15:56:33 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
+[2024-11-29 15:56:33 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
+[2024-11-29 15:56:33 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:56:33 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
+[2024-11-29 15:56:33 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Started GreenGramVer2Application in 1.782 seconds (process running for 2.233)
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=qrwzf, location=asef, writerUserId=0, feedId=0)
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@639fb3e2
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[2024-11-29 15:56:40 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=qrwzf, location=asef, writerUserId=0, feedId=0)
+[2024-11-29 15:57:09 WARN HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s161ms589µs700ns).
+[2024-11-29 15:57:09 WARN http-nio-8080-exec-1] [org.mariadb.jdbc.message.server.ErrorPacket] Error: 1452-23000: Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+[2024-11-29 15:57:09 ERRORhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 0,
+            contents = 'qrwzf',
+            location = 'asef'
+ {FAILED after 1 msec}
+java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:93)
+	at org.mariadb.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:276)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy83.insFeed(Unknown Source)
+	at com.green.greengramver2.feed.FeedService.postFeed(FeedService.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.green.greengramver2.feed.FeedService$$SpringCGLIB$$0.postFeed(<generated>)
+	at com.green.greengramver2.feed.FeedController.postFeed(FeedController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-29 15:57:09 ERRORhttp-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+### The error may exist in file [D:\Students\jang jin seong\GreenGramVer2\build\resources\main\mappers\FeedMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into feed         set writer_user_id = ?,             contents = ?,             location = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+; (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))] with root cause
+java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:93)
+	at org.mariadb.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:276)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy83.insFeed(Unknown Source)
+	at com.green.greengramver2.feed.FeedService.postFeed(FeedService.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.green.greengramver2.feed.FeedService$$SpringCGLIB$$0.postFeed(<generated>)
+	at com.green.greengramver2.feed.FeedController.postFeed(FeedController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-29 15:57:12 INFO http-nio-8080-exec-2] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=qrwzf, location=asef, writerUserId=0, feedId=0)
+[2024-11-29 15:57:12 INFO http-nio-8080-exec-2] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=qrwzf, location=asef, writerUserId=0, feedId=0)
+[2024-11-29 15:58:03 WARN HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54s226ms668µs800ns).
+[2024-11-29 15:58:03 WARN http-nio-8080-exec-2] [org.mariadb.jdbc.message.server.ErrorPacket] Error: 1452-23000: Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+[2024-11-29 15:58:03 ERRORhttp-nio-8080-exec-2] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 0,
+            contents = 'qrwzf',
+            location = 'asef'
+ {FAILED after 0 msec}
+java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:93)
+	at org.mariadb.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:276)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy83.insFeed(Unknown Source)
+	at com.green.greengramver2.feed.FeedService.postFeed(FeedService.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.green.greengramver2.feed.FeedService$$SpringCGLIB$$0.postFeed(<generated>)
+	at com.green.greengramver2.feed.FeedController.postFeed(FeedController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-29 15:58:03 ERRORhttp-nio-8080-exec-2] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+### The error may exist in file [D:\Students\jang jin seong\GreenGramVer2\build\resources\main\mappers\FeedMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into feed         set writer_user_id = ?,             contents = ?,             location = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+; (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))] with root cause
+java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or update a child row: a foreign key constraint fails (`greengram_ver2`.`feed`, CONSTRAINT `FK_FEED_writwr_user_id` FOREIGN KEY (`writer_user_id`) REFERENCES `user` (`user_id`))
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:297)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:93)
+	at org.mariadb.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:276)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy83.insFeed(Unknown Source)
+	at com.green.greengramver2.feed.FeedService.postFeed(FeedService.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.green.greengramver2.feed.FeedService$$SpringCGLIB$$0.postFeed(<generated>)
+	at com.green.greengramver2.feed.FeedController.postFeed(FeedController.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-29 15:58:03 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2024-11-29 15:58:03 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+[2024-11-29 15:58:05 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Starting GreenGramVer2Application using Java 17.0.13 with PID 13456 (D:\Students\jang jin seong\GreenGramVer2\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramVer2)
+[2024-11-29 15:58:05 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] No active profile set, falling back to 1 default profile: "default"
+[2024-11-29 15:58:05 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-11-29 15:58:05 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-11-29 15:58:06 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
+[2024-11-29 15:58:06 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:58:06 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+[2024-11-29 15:58:06 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
+[2024-11-29 15:58:06 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+[2024-11-29 15:58:06 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 889 ms
+[2024-11-29 15:58:06 INFO restartedMain] [com.green.greengramver2.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_ver2
+[2024-11-29 15:58:06 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
+[2024-11-29 15:58:06 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
+[2024-11-29 15:58:06 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:58:06 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
+[2024-11-29 15:58:06 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Started GreenGramVer2Application in 1.843 seconds (process running for 2.346)
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [com.green.greengramver2.feed.model.FeedGetReq] FeedGetReq 1,null,1
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [com.green.greengramver2.feed.FeedController] feedC getFeedList p: FeedGetReq(signedUserId=1)
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@593f145e
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = 1
+        ORDER BY a.feed_id DESC
+        LIMIT 0,20
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|feed_id |writer_user_id |writernm |pic                                      |contents |location |created_at          |islike |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|14      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:21 |1      |
+|13      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:14 |1      |
+|12      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:42:17 |1      |
+|11      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |123      |33123    |2024-11-29 10:42:01 |0      |
+|9       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |21123    |3        |2024-11-29 10:37:22 |0      |
+|7       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-28 17:20:59 |1      |
+|6       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |         |         |2024-11-28 17:15:01 |0      |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 14
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|a3709fe6-3e0d-4f04-8cef-1cc328c4fc0c.jpg |
+|ada457b9-68aa-4a78-b0c8-c5035af844e2.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 13
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|6fe5de58-57ef-47e7-80c7-49c0506ca143.jpg |
+|920ca8e8-5dc2-4844-aa7f-d7782e94d380.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 12
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|84e77be4-2b62-4f40-8f8b-0803e1080449.jpg |
+|84f31709-40aa-40eb-a7e7-da0219067927.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 11
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3fc51a83-46ea-43ca-a85b-6fad4794a2bd.jpg |
+|49906eb9-a412-4428-a629-baccbe152c75.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 9
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|34669219-c5d3-4d84-a277-fd8c2b8bca4f.jpg |
+|f1ed44ba-1254-4232-9a0d-65037abe1e9c.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 7
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|14ecfa41-07fc-40d0-b50b-3fe95a840992.jpg |
+|2694c9a6-a7b3-4800-ac73-0c853e16a152.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:58:08 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 6
+ {executed in 0 msec}
+[2024-11-29 15:58:08 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3c31d519-96b0-49bd-8657-d1eac4fb3fc1.jpg |
+|-----------------------------------------|
+
+[2024-11-29 15:58:20 INFO http-nio-8080-exec-2] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=aaa, location=aa, writerUserId=1, feedId=0)
+[2024-11-29 15:58:20 INFO http-nio-8080-exec-2] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=aaa, location=aa, writerUserId=1, feedId=0)
+[2024-11-29 15:58:25 DEBUGhttp-nio-8080-exec-2] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 1,
+            contents = 'aaa',
+            location = 'aa'
+ {executed in 6 msec}
+[2024-11-29 15:58:25 DEBUGhttp-nio-8080-exec-2] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
+1. getGeneratedKeys on query: insert into feed
+        set writer_user_id = 1,
+            contents = 'aaa',
+            location = 'aa'
+ {executed in 0 msec}
+[2024-11-29 15:58:25 INFO http-nio-8080-exec-2] [jdbc.resultsettable] 
+|----------|
+|insert_id |
+|----------|
+|22        |
+|----------|
+
+[2024-11-29 15:58:25 DEBUGhttp-nio-8080-exec-2] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed_pics
+        (feed_id, pic)
+        values
+         (  
+            22 ,'e97360ca-fe79-48c3-acaa-cd71042a0a78.tif'
+         )
+ {executed in 0 msec}
+[2024-11-29 15:59:49 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2024-11-29 15:59:49 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+[2024-11-29 15:59:51 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Starting GreenGramVer2Application using Java 17.0.13 with PID 12884 (D:\Students\jang jin seong\GreenGramVer2\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramVer2)
+[2024-11-29 15:59:51 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] No active profile set, falling back to 1 default profile: "default"
+[2024-11-29 15:59:51 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-11-29 15:59:51 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-11-29 15:59:52 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
+[2024-11-29 15:59:52 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:59:52 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+[2024-11-29 15:59:52 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
+[2024-11-29 15:59:52 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+[2024-11-29 15:59:52 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 863 ms
+[2024-11-29 15:59:52 INFO restartedMain] [com.green.greengramver2.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_ver2
+[2024-11-29 15:59:52 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
+[2024-11-29 15:59:52 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
+[2024-11-29 15:59:52 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+[2024-11-29 15:59:52 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
+[2024-11-29 15:59:52 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Started GreenGramVer2Application in 1.804 seconds (process running for 2.261)
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=4754, location=444, writerUserId=1, feedId=0)
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3eee837e
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=4754, location=444, writerUserId=1, feedId=0)
+[2024-11-29 16:00:03 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 1,
+            contents = '4754',
+            location = '444'
+ {executed in 0 msec}
+[2024-11-29 16:00:03 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
+1. getGeneratedKeys on query: insert into feed
+        set writer_user_id = 1,
+            contents = '4754',
+            location = '444'
+ {executed in 0 msec}
+[2024-11-29 16:00:03 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
+|----------|
+|insert_id |
+|----------|
+|23        |
+|----------|
+
+[2024-11-29 16:00:14 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed_pics
+        (feed_id, pic)
+        values
+         (  
+            23 ,'f3e6375d-35d8-4a4a-a976-26ca5c6abaac.jpg'
+         )
+ {executed in 0 msec}
+[2024-11-29 16:01:39 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2024-11-29 16:01:39 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+[2024-11-29 16:01:42 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Starting GreenGramVer2Application using Java 17.0.13 with PID 11268 (D:\Students\jang jin seong\GreenGramVer2\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramVer2)
+[2024-11-29 16:01:42 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] No active profile set, falling back to 1 default profile: "default"
+[2024-11-29 16:01:42 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-11-29 16:01:42 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-11-29 16:01:43 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
+[2024-11-29 16:01:43 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-11-29 16:01:43 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+[2024-11-29 16:01:43 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
+[2024-11-29 16:01:43 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+[2024-11-29 16:01:43 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 772 ms
+[2024-11-29 16:01:43 INFO restartedMain] [com.green.greengramver2.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_ver2
+[2024-11-29 16:01:43 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
+[2024-11-29 16:01:43 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
+[2024-11-29 16:01:43 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+[2024-11-29 16:01:43 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
+[2024-11-29 16:01:43 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Started GreenGramVer2Application in 1.621 seconds (process running for 1.98)
+[2024-11-29 16:01:52 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-11-29 16:01:52 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+[2024-11-29 16:01:52 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
+[2024-11-29 16:01:53 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=31231, location=123, writerUserId=1, feedId=0)
+[2024-11-29 16:01:53 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[2024-11-29 16:01:53 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@15678bf2
+[2024-11-29 16:01:53 INFO http-nio-8080-exec-1] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[2024-11-29 16:01:53 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=31231, location=123, writerUserId=1, feedId=0)
+[2024-11-29 16:01:53 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 1,
+            contents = '31231',
+            location = '123'
+ {executed in 1 msec}
+[2024-11-29 16:01:53 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
+1. getGeneratedKeys on query: insert into feed
+        set writer_user_id = 1,
+            contents = '31231',
+            location = '123'
+ {executed in 0 msec}
+[2024-11-29 16:01:53 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
+|----------|
+|insert_id |
+|----------|
+|24        |
+|----------|
+
+[2024-11-29 16:01:53 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed_pics
+        (feed_id, pic)
+        values
+         (  
+            24 ,'dfe6f2c1-3753-4a6a-aff4-0de7fa2786b8.jpg'
+         )
+ {executed in 1 msec}
+[2024-11-29 16:22:02 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2024-11-29 16:22:02 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+[2024-11-29 16:31:55 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Starting GreenGramVer2Application using Java 17.0.13 with PID 13956 (D:\Students\jang jin seong\GreenGramVer2\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramVer2)
+[2024-11-29 16:31:55 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] No active profile set, falling back to 1 default profile: "default"
+[2024-11-29 16:31:55 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2024-11-29 16:31:55 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2024-11-29 16:31:56 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
+[2024-11-29 16:31:56 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+[2024-11-29 16:31:56 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+[2024-11-29 16:31:56 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
+[2024-11-29 16:31:56 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+[2024-11-29 16:31:56 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 816 ms
+[2024-11-29 16:31:56 INFO restartedMain] [com.green.greengramver2.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_ver2
+[2024-11-29 16:31:56 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
+[2024-11-29 16:31:57 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
+[2024-11-29 16:31:57 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+[2024-11-29 16:31:57 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
+[2024-11-29 16:31:57 INFO restartedMain] [com.green.greengramver2.GreenGramVer2Application] Started GreenGramVer2Application in 1.785 seconds (process running for 2.272)
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [com.green.greengramver2.feed.model.FeedGetReq] FeedGetReq 1,null,1
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [com.green.greengramver2.feed.FeedController] feedC getFeedList p: FeedGetReq(signedUserId=1)
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@4545dd9e
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = 1
+        ORDER BY a.feed_id DESC
+        LIMIT 0,20
+ {executed in 1 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|feed_id |writer_user_id |writernm |pic                                      |contents |location |created_at          |islike |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|24      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |31231    |123      |2024-11-29 16:01:53 |0      |
+|23      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |4754     |444      |2024-11-29 16:00:03 |0      |
+|22      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |aaa      |aa       |2024-11-29 15:58:25 |0      |
+|14      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:21 |1      |
+|13      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:14 |1      |
+|12      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:42:17 |1      |
+|11      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |123      |33123    |2024-11-29 10:42:01 |0      |
+|9       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |21123    |3        |2024-11-29 10:37:22 |0      |
+|7       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-28 17:20:59 |1      |
+|6       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |         |         |2024-11-28 17:15:01 |0      |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 24
+ {executed in 1 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|dfe6f2c1-3753-4a6a-aff4-0de7fa2786b8.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 23
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|f3e6375d-35d8-4a4a-a976-26ca5c6abaac.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 22
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|e97360ca-fe79-48c3-acaa-cd71042a0a78.tif |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 14
+ {executed in 1 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|a3709fe6-3e0d-4f04-8cef-1cc328c4fc0c.jpg |
+|ada457b9-68aa-4a78-b0c8-c5035af844e2.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 13
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|6fe5de58-57ef-47e7-80c7-49c0506ca143.jpg |
+|920ca8e8-5dc2-4844-aa7f-d7782e94d380.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 12
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|84e77be4-2b62-4f40-8f8b-0803e1080449.jpg |
+|84f31709-40aa-40eb-a7e7-da0219067927.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 11
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3fc51a83-46ea-43ca-a85b-6fad4794a2bd.jpg |
+|49906eb9-a412-4428-a629-baccbe152c75.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 9
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|34669219-c5d3-4d84-a277-fd8c2b8bca4f.jpg |
+|f1ed44ba-1254-4232-9a0d-65037abe1e9c.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 7
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|14ecfa41-07fc-40d0-b50b-3fe95a840992.jpg |
+|2694c9a6-a7b3-4800-ac73-0c853e16a152.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:31:57 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 6
+ {executed in 0 msec}
+[2024-11-29 16:31:57 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3c31d519-96b0-49bd-8657-d1eac4fb3fc1.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:14 DEBUGhttp-nio-8080-exec-6] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into user
+        set uid = '44',
+            upw = '$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq',
+            nick_name = '66',
+            pic = 'd6440a69-541b-4d3c-969a-a6b643fd10de.jpg'
+ {executed in 1 msec}
+[2024-11-29 16:32:14 DEBUGhttp-nio-8080-exec-6] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
+1. getGeneratedKeys on query: insert into user
+        set uid = '44',
+            upw = '$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq',
+            nick_name = '66',
+            pic = 'd6440a69-541b-4d3c-969a-a6b643fd10de.jpg'
+ {executed in 1 msec}
+[2024-11-29 16:32:14 INFO http-nio-8080-exec-6] [jdbc.resultsettable] 
+|----------|
+|insert_id |
+|----------|
+|5         |
+|----------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select upw, user_id as userId, pic,
+        if(nick_name is null ,uid, nick_name) as nickName
+        from user
+        where uid = '44'
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|upw                                                          |user_id |pic                                      |nickname |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq |5       |d6440a69-541b-4d3c-969a-a6b643fd10de.jpg |66       |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-1] [com.green.greengramver2.user.UserService] com.green.greengramver2.user.model.UserSignInReq@6be5648a
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-1] [com.green.greengramver2.user.UserController] UserSignInRes(pic=d6440a69-541b-4d3c-969a-a6b643fd10de.jpg, nickName=66, userId=5, upw=$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq, msg=로그인 성공)
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [com.green.greengramver2.feed.model.FeedGetReq] FeedGetReq 1,null,5
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [com.green.greengramver2.feed.FeedController] feedC getFeedList p: FeedGetReq(signedUserId=5)
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = 5
+        ORDER BY a.feed_id DESC
+        LIMIT 0,20
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|feed_id |writer_user_id |writernm |pic                                      |contents |location |created_at          |islike |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|24      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |31231    |123      |2024-11-29 16:01:53 |0      |
+|23      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |4754     |444      |2024-11-29 16:00:03 |0      |
+|22      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |aaa      |aa       |2024-11-29 15:58:25 |0      |
+|14      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:21 |0      |
+|13      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:14 |0      |
+|12      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:42:17 |0      |
+|11      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |123      |33123    |2024-11-29 10:42:01 |0      |
+|9       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |21123    |3        |2024-11-29 10:37:22 |0      |
+|7       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-28 17:20:59 |0      |
+|6       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |         |         |2024-11-28 17:15:01 |0      |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 24
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|dfe6f2c1-3753-4a6a-aff4-0de7fa2786b8.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 23
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|f3e6375d-35d8-4a4a-a976-26ca5c6abaac.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 22
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|e97360ca-fe79-48c3-acaa-cd71042a0a78.tif |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 14
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|a3709fe6-3e0d-4f04-8cef-1cc328c4fc0c.jpg |
+|ada457b9-68aa-4a78-b0c8-c5035af844e2.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 13
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|6fe5de58-57ef-47e7-80c7-49c0506ca143.jpg |
+|920ca8e8-5dc2-4844-aa7f-d7782e94d380.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 12
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|84e77be4-2b62-4f40-8f8b-0803e1080449.jpg |
+|84f31709-40aa-40eb-a7e7-da0219067927.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 11
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3fc51a83-46ea-43ca-a85b-6fad4794a2bd.jpg |
+|49906eb9-a412-4428-a629-baccbe152c75.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 9
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|34669219-c5d3-4d84-a277-fd8c2b8bca4f.jpg |
+|f1ed44ba-1254-4232-9a0d-65037abe1e9c.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 7
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|14ecfa41-07fc-40d0-b50b-3fe95a840992.jpg |
+|2694c9a6-a7b3-4800-ac73-0c853e16a152.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:18 DEBUGhttp-nio-8080-exec-4] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 6
+ {executed in 0 msec}
+[2024-11-29 16:32:18 INFO http-nio-8080-exec-4] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3c31d519-96b0-49bd-8657-d1eac4fb3fc1.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:22 INFO http-nio-8080-exec-5] [com.green.greengramver2.feed.model.FeedGetReq] FeedGetReq 2,null,5
+[2024-11-29 16:32:22 INFO http-nio-8080-exec-5] [com.green.greengramver2.feed.FeedController] feedC getFeedList p: FeedGetReq(signedUserId=5)
+[2024-11-29 16:32:22 DEBUGhttp-nio-8080-exec-5] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = 5
+        ORDER BY a.feed_id DESC
+        LIMIT 20,20
+ {executed in 1 msec}
+[2024-11-29 16:32:22 INFO http-nio-8080-exec-5] [jdbc.resultsettable] 
+|--------|---------------|---------|----|---------|---------|-----------|-------|
+|feed_id |writer_user_id |writernm |pic |contents |location |created_at |islike |
+|--------|---------------|---------|----|---------|---------|-----------|-------|
+|--------|---------------|---------|----|---------|---------|-----------|-------|
+
+[2024-11-29 16:32:31 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=4123, location=213, writerUserId=5, feedId=0)
+[2024-11-29 16:32:31 INFO http-nio-8080-exec-1] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=4123, location=213, writerUserId=5, feedId=0)
+[2024-11-29 16:32:31 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 5,
+            contents = '4123',
+            location = '213'
+ {executed in 0 msec}
+[2024-11-29 16:32:31 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
+1. getGeneratedKeys on query: insert into feed
+        set writer_user_id = 5,
+            contents = '4123',
+            location = '213'
+ {executed in 0 msec}
+[2024-11-29 16:32:31 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
+|----------|
+|insert_id |
+|----------|
+|25        |
+|----------|
+
+[2024-11-29 16:32:31 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed_pics
+        (feed_id, pic)
+        values
+         (  
+            25 ,'8213634a-99df-42d8-963e-87bc120cc8a7.jpg'
+         )
+ {executed in 0 msec}
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select upw, user_id as userId, pic,
+        if(nick_name is null ,uid, nick_name) as nickName
+        from user
+        where uid = '44'
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|upw                                                          |user_id |pic                                      |nickname |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq |5       |d6440a69-541b-4d3c-969a-a6b643fd10de.jpg |66       |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-8] [com.green.greengramver2.user.UserService] com.green.greengramver2.user.model.UserSignInReq@54b7202a
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-8] [com.green.greengramver2.user.UserController] UserSignInRes(pic=d6440a69-541b-4d3c-969a-a6b643fd10de.jpg, nickName=66, userId=5, upw=$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq, msg=로그인 성공)
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [com.green.greengramver2.feed.model.FeedGetReq] FeedGetReq 1,null,5
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [com.green.greengramver2.feed.FeedController] feedC getFeedList p: FeedGetReq(signedUserId=5)
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = 5
+        ORDER BY a.feed_id DESC
+        LIMIT 0,20
+ {executed in 1 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|feed_id |writer_user_id |writernm |pic                                      |contents |location |created_at          |islike |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|25      |5              |66       |d6440a69-541b-4d3c-969a-a6b643fd10de.jpg |4123     |213      |2024-11-29 16:32:31 |0      |
+|24      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |31231    |123      |2024-11-29 16:01:53 |0      |
+|23      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |4754     |444      |2024-11-29 16:00:03 |0      |
+|22      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |aaa      |aa       |2024-11-29 15:58:25 |0      |
+|14      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:21 |0      |
+|13      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:14 |0      |
+|12      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:42:17 |0      |
+|11      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |123      |33123    |2024-11-29 10:42:01 |0      |
+|9       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |21123    |3        |2024-11-29 10:37:22 |0      |
+|7       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-28 17:20:59 |0      |
+|6       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |         |         |2024-11-28 17:15:01 |0      |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 25
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|8213634a-99df-42d8-963e-87bc120cc8a7.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 24
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|dfe6f2c1-3753-4a6a-aff4-0de7fa2786b8.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 23
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|f3e6375d-35d8-4a4a-a976-26ca5c6abaac.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 22
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|e97360ca-fe79-48c3-acaa-cd71042a0a78.tif |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 14
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|a3709fe6-3e0d-4f04-8cef-1cc328c4fc0c.jpg |
+|ada457b9-68aa-4a78-b0c8-c5035af844e2.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 13
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|6fe5de58-57ef-47e7-80c7-49c0506ca143.jpg |
+|920ca8e8-5dc2-4844-aa7f-d7782e94d380.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 12
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|84e77be4-2b62-4f40-8f8b-0803e1080449.jpg |
+|84f31709-40aa-40eb-a7e7-da0219067927.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 11
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3fc51a83-46ea-43ca-a85b-6fad4794a2bd.jpg |
+|49906eb9-a412-4428-a629-baccbe152c75.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 9
+ {executed in 0 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|34669219-c5d3-4d84-a277-fd8c2b8bca4f.jpg |
+|f1ed44ba-1254-4232-9a0d-65037abe1e9c.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 7
+ {executed in 1 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|14ecfa41-07fc-40d0-b50b-3fe95a840992.jpg |
+|2694c9a6-a7b3-4800-ac73-0c853e16a152.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:32:36 DEBUGhttp-nio-8080-exec-9] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 6
+ {executed in 1 msec}
+[2024-11-29 16:32:36 INFO http-nio-8080-exec-9] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3c31d519-96b0-49bd-8657-d1eac4fb3fc1.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:58 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select upw, user_id as userId, pic,
+        if(nick_name is null ,uid, nick_name) as nickName
+        from user
+        where uid = '44'
+ {executed in 1 msec}
+[2024-11-29 16:34:58 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|upw                                                          |user_id |pic                                      |nickname |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+|$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq |5       |d6440a69-541b-4d3c-969a-a6b643fd10de.jpg |66       |
+|-------------------------------------------------------------|--------|-----------------------------------------|---------|
+
+[2024-11-29 16:34:58 INFO http-nio-8080-exec-1] [com.green.greengramver2.user.UserService] com.green.greengramver2.user.model.UserSignInReq@67e65b9d
+[2024-11-29 16:34:58 INFO http-nio-8080-exec-1] [com.green.greengramver2.user.UserController] UserSignInRes(pic=d6440a69-541b-4d3c-969a-a6b643fd10de.jpg, nickName=66, userId=5, upw=$2a$10$Pq002vuCsa/bQIY5BlcQPeYF/IU6P5wlXD4k9EdGHoCM.d72Wv3Pq, msg=로그인 성공)
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [com.green.greengramver2.feed.model.FeedGetReq] FeedGetReq 1,null,5
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [com.green.greengramver2.feed.FeedController] feedC getFeedList p: FeedGetReq(signedUserId=5)
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = 5
+        ORDER BY a.feed_id DESC
+        LIMIT 0,20
+ {executed in 0 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|feed_id |writer_user_id |writernm |pic                                      |contents |location |created_at          |islike |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+|25      |5              |66       |d6440a69-541b-4d3c-969a-a6b643fd10de.jpg |4123     |213      |2024-11-29 16:32:31 |0      |
+|24      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |31231    |123      |2024-11-29 16:01:53 |0      |
+|23      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |4754     |444      |2024-11-29 16:00:03 |0      |
+|22      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |aaa      |aa       |2024-11-29 15:58:25 |0      |
+|14      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:21 |0      |
+|13      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:51:14 |0      |
+|12      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-29 10:42:17 |0      |
+|11      |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |123      |33123    |2024-11-29 10:42:01 |0      |
+|9       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |21123    |3        |2024-11-29 10:37:22 |0      |
+|7       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |null     |null     |2024-11-28 17:20:59 |0      |
+|6       |1              |33       |2ef8b9f3-bb2b-446e-a17d-18fe27c210c1.jpg |         |         |2024-11-28 17:15:01 |0      |
+|--------|---------------|---------|-----------------------------------------|---------|---------|--------------------|-------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 25
+ {executed in 1 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|8213634a-99df-42d8-963e-87bc120cc8a7.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 24
+ {executed in 1 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|dfe6f2c1-3753-4a6a-aff4-0de7fa2786b8.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 23
+ {executed in 1 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|f3e6375d-35d8-4a4a-a976-26ca5c6abaac.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 22
+ {executed in 1 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|e97360ca-fe79-48c3-acaa-cd71042a0a78.tif |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 14
+ {executed in 0 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|a3709fe6-3e0d-4f04-8cef-1cc328c4fc0c.jpg |
+|ada457b9-68aa-4a78-b0c8-c5035af844e2.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 13
+ {executed in 0 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|6fe5de58-57ef-47e7-80c7-49c0506ca143.jpg |
+|920ca8e8-5dc2-4844-aa7f-d7782e94d380.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 12
+ {executed in 1 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|84e77be4-2b62-4f40-8f8b-0803e1080449.jpg |
+|84f31709-40aa-40eb-a7e7-da0219067927.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 11
+ {executed in 0 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3fc51a83-46ea-43ca-a85b-6fad4794a2bd.jpg |
+|49906eb9-a412-4428-a629-baccbe152c75.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 9
+ {executed in 0 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|34669219-c5d3-4d84-a277-fd8c2b8bca4f.jpg |
+|f1ed44ba-1254-4232-9a0d-65037abe1e9c.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 7
+ {executed in 0 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|14ecfa41-07fc-40d0-b50b-3fe95a840992.jpg |
+|2694c9a6-a7b3-4800-ac73-0c853e16a152.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:34:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select pic
+        from feed_pics
+        where feed_id = 6
+ {executed in 0 msec}
+[2024-11-29 16:34:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|-----------------------------------------|
+|pic                                      |
+|-----------------------------------------|
+|3c31d519-96b0-49bd-8657-d1eac4fb3fc1.jpg |
+|-----------------------------------------|
+
+[2024-11-29 16:42:57 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2024-11-29 16:42:57 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
