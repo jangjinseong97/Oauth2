@@ -10,7 +10,9 @@
             contents = #{contents},
             location = #{location}
     </insert>
-    <insert id="insPicDto">
+
+
+    <insert id="insPicDto1">
         insert into feed_pics
         set feed_id = #{feedId},
             pic = #{pic}
