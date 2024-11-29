@@ -1,11 +1,14 @@
 package com.green.greengramver2.feed;
 
 import com.green.greengramver2.common.model.ResultResponse;
+import com.green.greengramver2.feed.model.FeedGetReq;
+import com.green.greengramver2.feed.model.FeedGetRes;
 import com.green.greengramver2.feed.model.FeedPostReq;
 import com.green.greengramver2.feed.model.FeedPostRes;
-import lombok.Getter;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,10 +24,19 @@ public class FeedController {
     @PostMapping
     public ResultResponse<FeedPostRes> postFeed(@RequestPart List<MultipartFile> pics,
                                                 @RequestPart FeedPostReq p){
+        log.info("feedC postFeed p: {}",p.toString());
         FeedPostRes res =feedService.postFeed(pics, p);
         return ResultResponse.<FeedPostRes>builder().
-                resultMessage("피드 등록 완료").
+                resultMsg("피드 등록 완료").
                 resultData(res).
                 build();
+    }
+    @GetMapping
+    @Operation(summary = "feed 리스트", description = "loginUserId는 로그인한 사용자의 pk")
+    public ResultResponse<List<FeedGetRes>> getFeedList(@ParameterObject @ModelAttribute FeedGetReq p){
+        log.info("feedC getFeedList p: {}",p);
+        List<FeedGetRes> list = feedService.getFeedList(p);
+        return ResultResponse.<List<FeedGetRes>>builder().
+                resultMsg(String.format("%d row",list.size())).resultData(list).build();
     }
 }

@@ -17,16 +17,6 @@ public class Paging {
     private int sIdx;
 
     public Paging(Integer page, Integer size) {
-//        if(size == null || size<=0){
-//            size = 20;
-//        }
-//        if(page == null || page < 1){
-//            page = 1;
-//        }
-//        this.page = page;
-//        this.size = size;
-//        this.sIdx = (page -1)*size;
-
         this.page = (page == null || page < 1) ? 1 : page;
         this.size = (size == null || size <= 0) ? DEFAULT_PAGE_SIZE : size;
 

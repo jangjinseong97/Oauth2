@@ -1,9 +1,7 @@
 package com.green.greengramver2.feed;
 
 import com.green.greengramver2.common.MyFileUtils;
-import com.green.greengramver2.feed.model.FeedPicDto;
-import com.green.greengramver2.feed.model.FeedPostReq;
-import com.green.greengramver2.feed.model.FeedPostRes;
+import com.green.greengramver2.feed.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -26,6 +24,7 @@ public class FeedService {
     // sql에 넣을 때 오토커밋을 자동으로 끄고 에러가 없을 때만 커밋을 해주는 에노테이션
     public FeedPostRes postFeed(List<MultipartFile> pics,
                                 FeedPostReq p){
+        log.info("service {}",p.toString());
         int result = feedMapper.insFeed(p);
         long feedId = p.getFeedId();
 
@@ -81,5 +80,15 @@ public class FeedService {
         return FeedPostRes.builder().
                 feedId(feedId).pics(picNames).build();
 
+    }
+
+    public List<FeedGetRes> getFeedList(FeedGetReq p){
+        List<FeedGetRes> res = feedMapper.selFeedList(p);
+        for(FeedGetRes r : res){
+//            List<String> list = feedPicsMapper.selFeedPicList(r.getFeedId());
+//            r.setPics(list);
+            r.setPics(feedPicsMapper.selFeedPicList(r.getFeedId()));
+        }
+        return res;
     }
 }

@@ -17,4 +17,19 @@
         set feed_id = #{feedId},
             pic = #{pic}
     </insert>
+
+    <select id="selFeedList">
+        SELECT a.feed_id AS feedId, writer_user_id AS writerId,
+        if(nick_name IS NULL , uid, nick_name) AS writerNm,
+        pic AS writerPic, contents, location, a.created_at AS createdAt,
+        if(c.feed_id IS NULL ,0 , 1) AS isLike
+        FROM feed A
+        JOIN user B
+        ON a.writer_user_id = b.user_id
+        LEFT JOIN feed_like c
+        ON a.feed_id = c.feed_id
+        AND c.user_id = #{signedUserId}
+        ORDER BY a.feed_id DESC
+        LIMIT #{sIdx},#{size}
+    </select>
 </mapper>

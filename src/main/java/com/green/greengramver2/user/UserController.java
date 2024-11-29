@@ -7,12 +7,8 @@ import com.green.greengramver2.user.model.UserSignUpReq;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
-import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.xml.transform.Result;
 
 @Slf4j
 @RestController
@@ -28,7 +24,7 @@ public class UserController {
         int res = service.SignUp(pic, p);
 
         return ResultResponse.<Integer>builder().
-                resultMessage(p.getMsg()).
+                resultMsg(p.getMsg()).
                 resultData(res).
                 build();
     }
@@ -38,7 +34,7 @@ public class UserController {
         log.info(res.toString());
 
         return ResultResponse.<UserSignInRes>builder().
-                resultMessage(res.getMsg()).
+                resultMsg(res.getMsg()).
                 resultData(res).
                 build();
     }
