@@ -1,6 +1,11 @@
 package com.green.greengramver2.feed;
 
 import com.green.greengramver2.common.MyFileUtils;
+import com.green.greengramver2.feed.comment.FeedCommentMapper;
+import com.green.greengramver2.feed.comment.model.FeedCommentDto;
+import com.green.greengramver2.feed.comment.model.FeedCommentGetReq;
+import com.green.greengramver2.feed.comment.model.FeedCommentGetRes;
+import com.green.greengramver2.feed.comment.model.FeedCommentPostReq;
 import com.green.greengramver2.feed.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +23,7 @@ import java.util.List;
 public class FeedService {
     private final FeedMapper feedMapper;
     private final FeedPicsMapper feedPicsMapper;
+    private final FeedCommentMapper feedCommentMapper;
     private final MyFileUtils myFileUtils;
 
     @Transactional
@@ -83,11 +89,35 @@ public class FeedService {
     }
 
     public List<FeedGetRes> getFeedList(FeedGetReq p){
+        // n+1 이슈 발생?
         List<FeedGetRes> res = feedMapper.selFeedList(p);
         for(FeedGetRes r : res){
 //            List<String> list = feedPicsMapper.selFeedPicList(r.getFeedId());
 //            r.setPics(list);
             r.setPics(feedPicsMapper.selFeedPicList(r.getFeedId()));
+
+            FeedCommentGetReq commentGetReq = new FeedCommentGetReq();
+            commentGetReq.setPage(1);
+            commentGetReq.setFeedId(r.getFeedId());
+
+            List<FeedCommentDto> commentList = feedCommentMapper.selFeedCommentListBy(commentGetReq);
+            FeedCommentGetRes commentGetRes = new FeedCommentGetRes();
+            commentGetRes.setCommentList(commentList);
+//            boolean a=false;
+//            if(commentList.size()==4){
+//                a = true;
+//            }
+            commentGetRes.setMoreComment(commentList.size()==4)
+            ;
+            // 굳이 if 문을 안거치고한번에 넣어도 됨
+//            commentGetRes.setMoreComment(commentGetRes.getCommentList().size()==4);
+            // 어쳐피 commentList를 넣어준거니 동일한 자료
+
+            if(commentGetRes.isMoreComment()){
+                commentList.remove(commentList.size()-1);
+            }
+            // 4개라면 3개만 출력하기 위하여 하나를 빼는 것
+            r.setComment(commentGetRes);
         }
         return res;
     }

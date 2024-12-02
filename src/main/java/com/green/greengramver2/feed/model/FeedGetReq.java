@@ -12,7 +12,7 @@ import java.beans.ConstructorProperties;
 
 @Setter
 @Getter
-@ToString
+@ToString(callSuper = true)
 @Slf4j
 public class FeedGetReq extends Paging {
     @Schema(title = "로그인 유저 pk", name = "signed_user_id")
