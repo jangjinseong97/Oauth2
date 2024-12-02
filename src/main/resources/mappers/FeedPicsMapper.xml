@@ -17,7 +17,7 @@
         insert into feed_pics
         (feed_id, pic)
         values
-        <foreach collection="pics" item="pic" separator="),(">
+        <foreach collection="pics" item="pic" separator=",">
             ( #{feedId} ,#{pic} )
         </foreach>
 

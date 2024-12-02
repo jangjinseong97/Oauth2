@@ -5653,3 +5653,34 @@ java.sql.SQLIntegrityConstraintViolationException: (conn=164) Cannot add or upda
             26 ,'3e5fe979-fe9c-4ed6-9ad7-c1dbf4f2538f.jpg'
          )
  {executed in 0 msec}
+[2024-11-29 17:07:59 INFO http-nio-8080-exec-8] [com.green.greengramver2.feed.FeedController] feedC postFeed p: FeedPostReq(contents=I am panguin, location=남극, writerUserId=1, feedId=0)
+[2024-11-29 17:07:59 INFO http-nio-8080-exec-8] [com.green.greengramver2.feed.FeedService] service FeedPostReq(contents=I am panguin, location=남극, writerUserId=1, feedId=0)
+[2024-11-29 17:07:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed
+        set writer_user_id = 1,
+            contents = 'I am panguin',
+            location = '남극'
+ {executed in 0 msec}
+[2024-11-29 17:07:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
+1. getGeneratedKeys on query: insert into feed
+        set writer_user_id = 1,
+            contents = 'I am panguin',
+            location = '남극'
+ {executed in 0 msec}
+[2024-11-29 17:07:59 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
+|----------|
+|insert_id |
+|----------|
+|27        |
+|----------|
+
+[2024-11-29 17:07:59 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. insert into feed_pics
+        (feed_id, pic)
+        values
+         (  
+            27 ,'5a0d637a-00c7-441f-a9fa-c0dc68af2602.jpg'
+         )
+ {executed in 0 msec}
+[2024-11-29 17:31:52 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2024-11-29 17:31:52 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
