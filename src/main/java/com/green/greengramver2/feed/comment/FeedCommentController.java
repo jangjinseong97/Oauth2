@@ -1,13 +1,12 @@
 package com.green.greengramver2.feed.comment;
 
 import com.green.greengramver2.common.model.ResultResponse;
+import com.green.greengramver2.feed.comment.model.FeedCommentDelReq;
 import com.green.greengramver2.feed.comment.model.FeedCommentPostReq;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -22,5 +21,15 @@ public class FeedCommentController {
         long res = p.getFeedCommentId();
         return ResultResponse.<Long>builder().
                 resultMsg("작성 완료").resultData(res).build();
+    }
+    @DeleteMapping
+    public ResultResponse<Integer> delFeedComment(@RequestParam("feed_comment_id") long feedCommentId,
+                                                  @RequestParam("signed_user_id") long signedUserId){
+        FeedCommentDelReq p = new FeedCommentDelReq();
+        p.setFeedCommentId(feedCommentId);
+        p.setSignedUserId(signedUserId);
+        log.info("delFeedComment {}",p.toString());
+        int res = service.delFeedComment(p);
+        return ResultResponse.<Integer>builder().resultData(res).resultMsg("").build();
     }
 }

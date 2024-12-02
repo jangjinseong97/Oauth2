@@ -20,4 +20,10 @@
         ORDER BY feed_comment_id DESC
         LIMIT #{sIdx}, #{size}
     </select>
+
+    <delete id="delFeedComment">
+        delete
+        from feed_comments
+        where user_id = #{signedUserId} and feed_comment_id = #{feedCommentId}
+    </delete>
 </mapper>
