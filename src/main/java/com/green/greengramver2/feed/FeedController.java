@@ -6,6 +6,7 @@ import com.green.greengramver2.feed.model.FeedGetRes;
 import com.green.greengramver2.feed.model.FeedPostReq;
 import com.green.greengramver2.feed.model.FeedPostRes;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.annotations.ParameterObject;
@@ -18,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("feed")
 @Slf4j
+@Tag(name = "2. 게시글 관리")
 public class FeedController {
     private final FeedService feedService;
 

@@ -96,8 +96,9 @@ public class FeedService {
 //            r.setPics(list);
             r.setPics(feedPicsMapper.selFeedPicList(r.getFeedId()));
 
-            FeedCommentGetReq commentGetReq = new FeedCommentGetReq();
-            commentGetReq.setPage(1);
+            FeedCommentGetReq commentGetReq = new FeedCommentGetReq(r.getFeedId(),3,0);
+//            commentGetReq.setPage(1);
+//            commentGetReq.setSize();
             commentGetReq.setFeedId(r.getFeedId());
 
             List<FeedCommentDto> commentList = feedCommentMapper.selFeedCommentListBy(commentGetReq);
@@ -107,8 +108,7 @@ public class FeedService {
 //            if(commentList.size()==4){
 //                a = true;
 //            }
-            commentGetRes.setMoreComment(commentList.size()==4)
-            ;
+            commentGetRes.setMoreComment(commentList.size()==commentGetReq.getSize());
             // 굳이 if 문을 안거치고한번에 넣어도 됨
 //            commentGetRes.setMoreComment(commentGetRes.getCommentList().size()==4);
             // 어쳐피 commentList를 넣어준거니 동일한 자료
