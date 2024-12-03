@@ -29,13 +29,13 @@ public class FeedCommentService {
 
     public FeedCommentGetRes getFeedComment(FeedCommentGetReq p){
         // 실행 시 튜플이 빠진상태로 시작
-        List<FeedCommentDto> commentList = feedMapper.selFeedCommentListBy(p);
         FeedCommentGetRes res = new FeedCommentGetRes();
 //        if(p.getPage() < 2){
 //            res.setCommentList(new ArrayList<>());
 //            // swagger에서 1페이지가 이걸로 인해 나오지 않음 > 지운다고 swagger에서 1페이지 말고 바뀔게 있나?
 //            return res;
 //        }
+        List<FeedCommentDto> commentList = feedMapper.selFeedCommentListBy(p);
         // 여기의 호출로 인해 이미 21개까지 제한이므로
 
         res.setCommentList(commentList);
