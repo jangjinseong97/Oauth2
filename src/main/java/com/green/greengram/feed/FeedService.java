@@ -21,7 +21,7 @@ import java.util.List;
 @Slf4j
 public class FeedService {
     private final FeedMapper feedMapper;
-    private final FeedPicsMapper feedPicsMapper;
+    private final FeedPicMapper feedPicMapper;
     private final FeedCommentMapper feedCommentMapper;
     private final MyFileUtils myFileUtils;
 
@@ -73,7 +73,7 @@ public class FeedService {
 
         feedPicDto.setPics(picNames);
         // list로 바꿨으므로 값을 담고나서 밖에서 생성 해야 된다.
-        int resultPics = feedPicsMapper.insFeedPics(feedPicDto);
+        int resultPics = feedPicMapper.insFeedPic(feedPicDto);
 
 //        FeedPostRes res = new FeedPostRes();
 //        res.setFeedId(feedId);
@@ -93,7 +93,7 @@ public class FeedService {
         for(FeedGetRes r : res){
 //            List<String> list = feedPicsMapper.selFeedPicList(r.getFeedId());
 //            r.setPics(list);
-            r.setPics(feedPicsMapper.selFeedPicList(r.getFeedId()));
+            r.setPics(feedPicMapper.selFeedPicList(r.getFeedId()));
 
             FeedCommentGetReq commentGetReq = new FeedCommentGetReq(r.getFeedId(),3,0);
 //            commentGetReq.setPage(1);

@@ -13,7 +13,7 @@
 
 
     <insert id="insPicDto1">
-        insert into feed_pics
+        insert into feed_pic
         set feed_id = #{feedId},
             pic = #{pic}
     </insert>

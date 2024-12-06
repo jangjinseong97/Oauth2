@@ -4,16 +4,16 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.greengram.feed.comment.FeedCommentMapper">
     <insert id="insFeedComment" useGeneratedKeys="true" keyProperty="feedCommentId">
-        insert into feed_comments
+        insert into feed_comment
         set user_id = #{userId},
             feed_id = #{feedId},
-            `comment` = #{comment}
+            comment = #{comment}
     </insert>
 
     <select id="selFeedCommentListBy">
         SELECT a.user_id AS writerUserId, feed_comment_id as feedCommentId, comment,
         if(nick_name is null , uid, nick_name) as writerNm, pic as writerPic
-        FROM feed_comments A
+        FROM feed_comment A
         join user B
         on a.user_id = b.user_id
         WHERE feed_id = #{feedId}
@@ -23,7 +23,7 @@
 
     <delete id="delFeedComment">
         delete
-        from feed_comments
+        from feed_comment
         where user_id = #{signedUserId} and feed_comment_id = #{feedCommentId}
     </delete>
 </mapper>

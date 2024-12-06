@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.greengram.user.profile.UserProfileMapper">
+    <select id = "selUserProfile">
+        select
+            (select count(*) from user_follow where to_user_id = #{userId}) as followCnt,
+            (select count(*) from user_follow where from_user_id = #{userId}) as followerCnt,
+            (select count(*) from feed where writer_user_id = #{userId}) as feedCnt,
+            (select count(*) from feed_like where user_id = #{userId}) as likeCnt,
+            pic, if(nick_name IS NULL , uid, nick_name) AS nickName, created_at AS createdAt
+        FROM user
+        WHERE user_id = #{userId}
+
+    </select>
+
+</mapper>
