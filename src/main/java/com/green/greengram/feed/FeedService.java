@@ -88,6 +88,7 @@ public class FeedService {
     }
 
     public List<FeedGetRes> getFeedList(FeedGetReq p){
+
         // n+1 이슈 발생?
         List<FeedGetRes> res = feedMapper.selFeedList(p);
         for(FeedGetRes r : res){

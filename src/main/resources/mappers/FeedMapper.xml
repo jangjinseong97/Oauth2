@@ -29,6 +29,18 @@
         LEFT JOIN feed_like c
         ON a.feed_id = c.feed_id
         AND c.user_id = #{signedUserId}
+
+        <if test="profileUserId != null" >
+            <choose>
+                <when test="likeFeed">
+                    where c.user_id = #{profileUserId}
+                </when>
+                <otherwise>
+                    where b.user_id = #{profileUserId}
+                </otherwise>
+            </choose>
+        </if>
+
         ORDER BY a.feed_id DESC
         LIMIT #{sIdx},#{size}
     </select>

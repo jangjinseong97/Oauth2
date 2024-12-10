@@ -12,7 +12,6 @@
             pic, if(nick_name IS NULL , uid, nick_name) AS nickName, created_at AS createdAt
         FROM user
         WHERE user_id = #{userId}
-
     </select>
 
 </mapper>

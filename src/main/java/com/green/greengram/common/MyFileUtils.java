@@ -17,6 +17,10 @@ import java.util.UUID;
 public class MyFileUtils {
     private final String uploadPath;
 
+    public String getUploadPath() {
+        return uploadPath;
+    }
+
     public MyFileUtils(@Value("${file.directory}") String uploadPath) {
         // yaml에서 설정한 경로를 uploadPath에 넣어주는것
         log.info("MFU 생성자: {}", uploadPath);
@@ -25,7 +29,9 @@ public class MyFileUtils {
     }
     public String makeFolder(String path){
         File file = new File(uploadPath, path);
-        file.mkdirs();
+        if(!file.exists()){
+            file.mkdirs();
+        }
         return file.getAbsolutePath();
     }
 
@@ -58,5 +64,24 @@ public class MyFileUtils {
         File file = new File(uploadPath, path);
         // File 클래스와 new File 로 생성자를 이용하여 uploadPath와 Path 로 나눠진 경로를 합쳐줌
         mf.transferTo(file); // MultipartFile 의 메소드
+    }
+
+    public void deleteFolder(String path, boolean deleteRootFolder){
+        File folder = new File(path);
+        if(folder.exists() && folder.isDirectory()){
+            // path의 경로를 가지는 파일이 존재하면서 그 파일의 형태가 디렉토리(폴더)인가? 를 물어보는 것
+            File[] includedFiles = folder.listFiles();
+            // 폴더 혹은 파일을 불러오는 것
+            for(File f : includedFiles){
+                if(f.isDirectory()){
+                    deleteFolder(f.getAbsolutePath(), true);
+                } else {
+                    f.delete();
+                }
+            }
+            if(deleteRootFolder){
+                folder.delete();
+            }
+        }
     }
 }

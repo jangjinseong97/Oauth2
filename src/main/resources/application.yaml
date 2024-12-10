@@ -18,6 +18,8 @@ spring:
   servlet:
     multipart:
       max-file-size: 15MB
+      max-request-size: 40MB
+      # 요청 전체의 크기(위의 file size는 파일 하나하나고 아래의 max는 들어오는 모든 파일 크기의 합
 
 springdoc:
   swagger-ui:
