@@ -1,12 +1,10 @@
 package com.green.greengram.feed;
 
 import com.green.greengram.common.model.ResultResponse;
-import com.green.greengram.feed.model.FeedGetReq;
-import com.green.greengram.feed.model.FeedGetRes;
-import com.green.greengram.feed.model.FeedPostReq;
-import com.green.greengram.feed.model.FeedPostRes;
+import com.green.greengram.feed.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jdk.jfr.MetadataDefinition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.annotations.ParameterObject;
@@ -38,6 +36,23 @@ public class FeedController {
     public ResultResponse<List<FeedGetRes>> getFeedList(@ParameterObject @ModelAttribute FeedGetReq p){
         log.info("feedC getFeedList p: {}",p);
         List<FeedGetRes> list = feedService.getFeedList(p);
+        return ResultResponse.<List<FeedGetRes>>builder().
+                resultMsg(String.format("%d row",list.size())).resultData(list).build();
+    }
+    @DeleteMapping
+    @Operation(summary = "Feed 삭제")
+    public ResultResponse<Integer> delFeed(@ParameterObject @ModelAttribute FeedDelReq p){
+        int res = feedService.delFeed(p);
+        return ResultResponse.<Integer>builder().
+                resultMsg("피드 삭제").
+                resultData(res).
+                build();
+    }
+
+    @GetMapping("/3")
+    public ResultResponse<List<FeedGetRes>> getFeedList3(@ParameterObject @ModelAttribute FeedGetReq p){
+        log.info("feedC getFeedList p: {}",p);
+        List<FeedGetRes> list = feedService.getFeedList3(p);
         return ResultResponse.<List<FeedGetRes>>builder().
                 resultMsg(String.format("%d row",list.size())).resultData(list).build();
     }

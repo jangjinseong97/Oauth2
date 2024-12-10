@@ -77,12 +77,13 @@ public class UserService {
 
     public String patchUserPic(UserPicPatchReq p){
 
-        String folderPath = String.format("user/%d",p.getSignedUserId());
-        fileUtils.makeFolder(folderPath);
-        // 혹시 지워졌을때를 대비하여
 
         // 1. 저장할 파일명 생성
         String newPicName = p.getPic() != null ? fileUtils.makeRandomFileName(p.getPic()) : null ;
+
+        String folderPath = String.format("user/%d",p.getSignedUserId());
+        fileUtils.makeFolder(folderPath);
+        // 혹시 지워졌을때를 대비하여 파일생성
 
         // 2. 기존 파일 삭제
 
@@ -93,12 +94,19 @@ public class UserService {
         String deletePath = String.format("%s/user/%d",fileUtils.getUploadPath(),p.getSignedUserId());
         fileUtils.deleteFolder(deletePath, false);
 
+
+
+        log.info("서비스 p 값 : {}",p);
+//        if(p.getPic() == null) { return null; }
+        if(p.getPic() == null) { return newPicName; }
+        // 어쳐피 newPicName으로 인해 pic이 null이면 null 리턴아님?
+        // 아래의 코드 실행시 null값이 들어간 상황에서 문제가 생겨 여기서 null을 반환하는 것
+
         //3. 원하는 위치에 저장할 파일명으로 파일을 저장
 
 //        String folderPath = String.format("user/%d",p.getSignedUserId());
 //        fileUtils.makeFolder(folderPath);
 //        String filePath = String.format("%s/%s",folderPath,newPicName);
-
         String filePath = String.format("user/%d/%s",p.getSignedUserId(),newPicName);
         try {
             fileUtils.transferTo(p.getPic(),filePath);
@@ -110,8 +118,6 @@ public class UserService {
         // 4. db의 튜플을 수정으로 바꿈
         p.setPicName(newPicName);
         int a = mapper.patchUserPic(p);
-        if(p.getPic() == null) { return null; }
-        // 어쳐피 newPicName으로 인해 pic이 null이면 null 리턴아님?
 
 
         return newPicName;

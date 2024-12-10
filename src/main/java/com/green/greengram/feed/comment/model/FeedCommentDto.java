@@ -1,5 +1,6 @@
 package com.green.greengram.feed.comment.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,4 +15,6 @@ public class FeedCommentDto {
     private String comment;
     private String writerNm;
     private String writerPic;
+    @JsonIgnore
+    private long feedId;
 }
