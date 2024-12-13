@@ -101,6 +101,7 @@ public class FeedService {
             r.setPics(feedPicMapper.selFeedPicList(r.getFeedId()));
 
             FeedCommentGetReq commentGetReq = new FeedCommentGetReq(r.getFeedId(),3,0);
+
 //            commentGetReq.setPage(1);
 //            commentGetReq.setSize();
             commentGetReq.setFeedId(r.getFeedId());

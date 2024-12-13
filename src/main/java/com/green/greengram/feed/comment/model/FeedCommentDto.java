@@ -17,4 +17,5 @@ public class FeedCommentDto {
     private String writerPic;
     @JsonIgnore
     private long feedId;
+    // n+1 문제 해결때문에 추가
 }
