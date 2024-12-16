@@ -32,3 +32,6 @@ springdoc:
   cache:
     disabled: true
 
+jwt:
+  issuer: green@green.kr
+  secret-key: study-springboot
