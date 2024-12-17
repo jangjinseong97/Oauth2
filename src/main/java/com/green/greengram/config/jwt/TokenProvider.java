@@ -62,8 +62,10 @@ public class TokenProvider {
         // ++ 메소드를 이용하여 다른곳에 작성
 
         return Jwts.builder()
-                .header().add("typ","JWT")
-                .add("alg","HS256")
+//                .header().add("typ","JWT")
+//                .add("alg","HS256")
+                // 아래 하나만 줘도 됨
+                .header().type("JWT")
                 .and()
                 .issuer(jwtProperties.getIssuer()) //JWT의 발급자(issuer) 정보를 설정
                 .issuedAt(new Date()) // 토큰이 발급된 시간(현재시간으로) 설정
@@ -71,6 +73,7 @@ public class TokenProvider {
                 .claim("signedUser",makeClaim(jwtUser)) // JWT 의 내용 부분에 사용자 정보를 추가
                 .signWith(secretKey) // 서명 추가?
                 .compact(); // 위의 정보로 JWT 문자열 생성
+        // 참고로 데이터량과 무관하게 길이는 동일하게 나옴
     }
     private String makeClaim(JwtUser jwtUser){
         try {
@@ -115,7 +118,12 @@ public class TokenProvider {
         Claims claims = getClaims(token);
         String json = (String)claims.get("signedUser");
         // 객체를 직렬화해서 넣어둔것을 다시 빼온것이므로 다시 객체화가 필요
-        JwtUser jwtUser = objectMapper.convertValue(json, JwtUser.class);
+        JwtUser jwtUser = null;
+        try {
+            jwtUser = objectMapper.readValue(json, JwtUser.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
         // 다시 객체화
         MyUserDetails userDetails = new MyUserDetails();
         userDetails.setJwtUser(jwtUser);
