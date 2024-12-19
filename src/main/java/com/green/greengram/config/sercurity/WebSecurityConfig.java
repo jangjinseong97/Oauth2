@@ -1,5 +1,6 @@
 package com.green.greengram.config.sercurity;
 
+import com.green.greengram.config.jwt.TokenAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +21,8 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 // 호출마다 스프링컨테이너에 새로 객체를 생성
 @RequiredArgsConstructor
 public class WebSecurityConfig {
+    private final TokenAuthenticationFilter tokenAuthenticationFilter;
+
 //    // 스프링 시큐리트 기능 비활성화(관여하지 않았으면 하는 부분)
 //    @Bean
 //    public WebSecurityCustomizer webSecurityCustomizer() {
@@ -51,7 +55,7 @@ public class WebSecurityConfig {
                                 // patch 방식으로 저 주소값일때 허용
                             .anyRequest().permitAll())
                             // 나머지는 다 허용 >> 무조건 아래 있어야 함 위에 있으면 전부 허용이 되어버림
-
+                .addFilterBefore(tokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 

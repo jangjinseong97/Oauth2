@@ -86,7 +86,7 @@ public class UserService {
         jwtUser.setSignedUserId(res.getUserId());
         jwtUser.setRoles(new ArrayList<>(2));
         jwtUser.getRoles().add("ROLE_USER");
-        jwtUser.getRoles().add("ROLE_EX");
+        jwtUser.getRoles().add("ADMIN");
         String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofMinutes(20));
         String refreshToken =tokenProvider.generateToken(jwtUser, Duration.ofDays(15));
 
@@ -95,6 +95,7 @@ public class UserService {
         int maxAge = 1_296_000; // 15*24*60*60 15일의 초 값
         cookieUtils.setCookie(response,"refreshToken",refreshToken,maxAge);
         res.setMsg("로그인 성공");
+        log.info("res: {}",res);
         return res;
     }
 
@@ -106,8 +107,11 @@ public class UserService {
         Cookie cookie = cookieUtils.getCookie(req,"refreshToken");
         String refreshToken = cookie.getValue();
         log.info("refreshToken : {}",refreshToken);
-        UserDetails a = tokenProvider.getUserDetailsFromToken(refreshToken);
-        return refreshToken;
+//        UserDetails a = tokenProvider.getUserDetailsFromToken(refreshToken);
+        JwtUser jwtUser = tokenProvider.getJwtUserFromToken(refreshToken);
+        String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofMinutes(20));
+
+        return accessToken;
     }
 
     public String patchUserPic(UserPicPatchReq p){

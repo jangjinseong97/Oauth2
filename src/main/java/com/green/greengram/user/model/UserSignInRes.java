@@ -11,11 +11,11 @@ import lombok.ToString;
 public class UserSignInRes {
     private String pic;
     private String nickName;
-    @JsonIgnore
+//    @JsonIgnore
     private long userId;
+    private String accessToken;
     @JsonIgnore
     private String upw;
     @JsonIgnore
     private String msg;
-    private String accessToken;
 }

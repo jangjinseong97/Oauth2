@@ -1,6 +1,7 @@
 package com.green.greengram.feed;
 
 import com.green.greengram.common.MyFileUtils;
+import com.green.greengram.config.sercurity.AuthenticationFacade;
 import com.green.greengram.feed.comment.FeedCommentMapper;
 import com.green.greengram.feed.comment.model.FeedCommentDto;
 import com.green.greengram.feed.comment.model.FeedCommentGetReq;
@@ -26,11 +27,14 @@ public class FeedService {
     private final FeedPicMapper feedPicMapper;
     private final FeedCommentMapper feedCommentMapper;
     private final MyFileUtils myFileUtils;
+    private final AuthenticationFacade authenticationFacade;
 
     @Transactional
     // sql에 넣을 때 오토커밋을 자동으로 끄고 에러가 없을 때만 커밋을 해주는 에노테이션
     public FeedPostRes postFeed(List<MultipartFile> pics,
                                 FeedPostReq p){
+        p.setWriterUserId(authenticationFacade.getSignedUserId());
+
         log.info("service {}",p.toString());
         int result = feedMapper.insFeed(p);
         long feedId = p.getFeedId();
@@ -91,10 +95,14 @@ public class FeedService {
 
     public List<FeedGetRes> getFeedList(FeedGetReq p){
 
+        p.setSignedUserId(authenticationFacade.getSignedUserId());
         // n+1 이슈 발생
         // 아래의 for문으로 인해 각각 하나씩 select 가 사용되는게 문제
 
         List<FeedGetRes> res = feedMapper.selFeedList(p);
+        if(res.size()==0){
+            return res;
+        }
         for(FeedGetRes r : res){
 //            List<String> list = feedPicsMapper.selFeedPicList(r.getFeedId());
 //            r.setPics(list);
@@ -129,10 +137,15 @@ public class FeedService {
 
     // select 3번으로 줄이기
     public List<FeedGetRes> getFeedList3(FeedGetReq p){
+
+        p.setSignedUserId(authenticationFacade.getSignedUserId());
         // n+1 문제 해결
 
         // 피드 리스트
         List<FeedGetRes> res = feedMapper.selFeedList(p);
+        if(res.size()==0){
+            return res;
+        }
 
         // 피드 아이디 리스트가 필요함(피드 사진과 피드댓글의 정보를 위해)
         List<Long> feedIdList = new ArrayList<>(res.size());

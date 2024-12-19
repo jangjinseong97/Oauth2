@@ -14,7 +14,9 @@ public class FeedPostReq {
     private String contents;
     @Schema(title = "글 내용")
     private String location;
-    @Schema(requiredMode = Schema.RequiredMode.REQUIRED)
+
+    @JsonIgnore
+//    @Schema(requiredMode = Schema.RequiredMode.REQUIRED)
     private long writerUserId;
     @JsonIgnore
     private long feedId;

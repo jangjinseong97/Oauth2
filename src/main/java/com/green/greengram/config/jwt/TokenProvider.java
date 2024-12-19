@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.green.greengram.config.sercurity.MyUserDetails;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -61,6 +62,11 @@ public class TokenProvider {
         // 객체 자체를 JWT에 담고 싶어 객체를 직렬화
         // 즉 jwtUser에 담고 있는 데이터를 Json형태의 문자열로 바꿔줌
         // ++ 메소드를 이용하여 다른곳에 작성
+        JwtBuilder builder = Jwts.builder();
+        JwtBuilder.BuilderHeader header = builder.header();
+        header.type("JWT");
+
+        builder.issuer(jwtProperties.getIssuer());
 
         return Jwts.builder()
 //                .header().add("typ","JWT")
@@ -116,18 +122,32 @@ public class TokenProvider {
         // 뒤의 ROLE_USER 는 권한 이름 ROLE_ 만 붙여주고 뒤에 달리는게 이름
         //return new UsernamePasswordAuthenticationToken();
     }
-
-    public UserDetails getUserDetailsFromToken(String token) {
+    public JwtUser getJwtUserFromToken(String token) {
         Claims claims = getClaims(token);
-        String json = (String)claims.get("signedUser");
-        // 객체를 직렬화해서 넣어둔것을 다시 빼온것이므로 다시 객체화가 필요
+        String json = (String) claims.get("signedUser");
         JwtUser jwtUser = null;
         try {
             jwtUser = objectMapper.readValue(json, JwtUser.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-        // 다시 객체화
+        return jwtUser;
+    }
+
+    public UserDetails getUserDetailsFromToken(String token) {
+
+//        Claims claims = getClaims(token);
+//        String json = (String)claims.get("signedUser");
+//        // 객체를 직렬화해서 넣어둔것을 다시 빼온것이므로 다시 객체화가 필요
+//        JwtUser jwtUser = null;
+//        try {
+//            jwtUser = objectMapper.readValue(json, JwtUser.class);
+//        } catch (JsonProcessingException e) {
+//            throw new RuntimeException(e);
+//        }
+//        // 다시 객체화
+
+        JwtUser jwtUser = getJwtUserFromToken(token);
         MyUserDetails userDetails = new MyUserDetails();
         userDetails.setJwtUser(jwtUser);
         return userDetails;

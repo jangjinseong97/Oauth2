@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -29,10 +30,12 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
         // "Bearer 토큰값" 이 들어가게 됨
 
         String token = getAccessToken(authorizationHeader);
-
+        log.info("Token: {}", token);
         if(tokenProvider.validToken(token)){
             Authentication auth = tokenProvider.getAuthentication(token);
+            SecurityContextHolder.getContext().setAuthentication(auth);
         }
+
         filterChain.doFilter(request, response);
         // 다음 필터에 request response filterChain 을 넘기는것
     }
