@@ -46,7 +46,8 @@ public class TokenProvider {
         Date now = new Date();
         // 현재시간 (long 값)
         return makeToken(jwtUser, new Date(now.getTime() + expiredAt.toMillis()));
-        // new 뒷부분은 만료시간 계산
+        // new 뒷부분은 만료시간 계산 now로 지금 시간, Duration 타입 expiredAt 로 얼마나 뒤 까지 인지
+        // toMillis로 초 단위로 환산 둘다 long 값
     }
 
     private String makeToken(JwtUser jwtUser, Date expiry){
@@ -65,7 +66,7 @@ public class TokenProvider {
 //                .header().add("typ","JWT")
 //                .add("alg","HS256")
                 // 아래 하나만 줘도 됨
-                .header().type("JWT")
+                .header().type("JWT")// JWT 암호화라는걸 알려주는 역할
                 .and()
                 .issuer(jwtProperties.getIssuer()) //JWT의 발급자(issuer) 정보를 설정
                 .issuedAt(new Date()) // 토큰이 발급된 시간(현재시간으로) 설정
@@ -91,10 +92,12 @@ public class TokenProvider {
         try{
             //jwt 복호화
             getClaims(token);
-            return true;
+//            return true;
         } catch (Exception e) {
             return false;
         }
+            return true;
+        // 큰차이는 없지만 try안에는 코드가 적을수록 좋아서 빼주는게 좋긴함
     }
 
     // spring security 가 인증/인가 할때 사용하는 개체

@@ -4,6 +4,8 @@ import com.green.greengram.common.model.ResultResponse;
 import com.green.greengram.user.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.annotations.ParameterObject;
@@ -33,8 +35,9 @@ public class UserController {
     }
     @PostMapping("sign-in")
     @Operation(summary = "유저 로그인")
-    public ResultResponse<UserSignInRes> signIn(@RequestBody UserSignInReq p) {
-        UserSignInRes res = service.signIn(p);
+    public ResultResponse<UserSignInRes> signIn(@RequestBody UserSignInReq p,
+                                                HttpServletResponse resp) {
+        UserSignInRes res = service.signIn(p, resp);
         log.info(res.toString());
 
         return ResultResponse.<UserSignInRes>builder().
@@ -52,6 +55,16 @@ public class UserController {
                 resultData(res).
                 resultMsg("유저 프로필 정보").
                 build();
+    }
+
+    @GetMapping("access-token")
+    @Operation(summary = "accessToken 재발행")
+    public ResultResponse<String> getAccessToken(HttpServletRequest req) {
+        String accessToken = service.getAccessToken(req);
+        return ResultResponse.<String>builder()
+                .resultMsg("Access Token 재발행")
+                .resultData(accessToken)
+                .build();
     }
 
     @PatchMapping("pic")

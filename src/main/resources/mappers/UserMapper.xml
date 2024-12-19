@@ -74,4 +74,10 @@
         where user_id = #{signedUserId}
 
     </update>
+
+    <select id="getUserId">
+        select userId
+        from user
+        where uid = #{uid}
+    </select>
 </mapper>
