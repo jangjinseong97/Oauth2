@@ -4,6 +4,7 @@ import com.green.greengram.common.model.ResultResponse;
 import com.green.greengram.feed.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import jdk.jfr.MetadataDefinition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +24,7 @@ public class FeedController {
 
     @PostMapping
     public ResultResponse<FeedPostRes> postFeed(@RequestPart List<MultipartFile> pics,
-                                                @RequestPart FeedPostReq p){
+                                                @Valid @RequestPart FeedPostReq p){
         log.info("feedC postFeed p: {}",p.toString());
         FeedPostRes res =feedService.postFeed(pics, p);
         return ResultResponse.<FeedPostRes>builder().
@@ -33,7 +34,7 @@ public class FeedController {
     }
     @GetMapping
     @Operation(summary = "feed 리스트", description = "loginUserId는 로그인한 사용자의 pk")
-    public ResultResponse<List<FeedGetRes>> getFeedList(@ParameterObject @ModelAttribute FeedGetReq p){
+    public ResultResponse<List<FeedGetRes>> getFeedList(@Valid @ParameterObject @ModelAttribute FeedGetReq p){
         log.info("feedC getFeedList p: {}",p);
         List<FeedGetRes> list = feedService.getFeedList(p);
         return ResultResponse.<List<FeedGetRes>>builder().
@@ -50,7 +51,7 @@ public class FeedController {
     }
 
     @GetMapping("/3")
-    public ResultResponse<List<FeedGetRes>> getFeedList3(@ParameterObject @ModelAttribute FeedGetReq p){
+    public ResultResponse<List<FeedGetRes>> getFeedList3(@Valid @ParameterObject @ModelAttribute FeedGetReq p){
         log.info("feedC getFeedList p: {}",p);
         List<FeedGetRes> list = feedService.getFeedList3(p);
         return ResultResponse.<List<FeedGetRes>>builder().

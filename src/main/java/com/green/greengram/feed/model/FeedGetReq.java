@@ -3,6 +3,7 @@ package com.green.greengram.feed.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.green.greengram.common.model.Paging;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,6 +19,8 @@ public class FeedGetReq extends Paging {
 //    @Schema(title = "로그인 유저 pk", name = "signed_user_id")
     @JsonIgnore
     private long signedUserId;
+
+    @Positive
     @Schema(title = "프로필 유저 pk" , name ="profile_user_id",
             requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     private Long profileUserId;
