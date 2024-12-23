@@ -7,6 +7,7 @@ import com.green.greengram.feed.comment.model.FeedCommentGetRes;
 import com.green.greengram.feed.comment.model.FeedCommentPostReq;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.annotations.ParameterObject;
@@ -30,7 +31,7 @@ public class FeedCommentController {
     }
     @GetMapping("Parameter")
     @Operation(summary = "BindParam")
-    public ResultResponse<FeedCommentGetRes> feedCommentGet1(@ParameterObject @ModelAttribute FeedCommentGetReq p){
+    public ResultResponse<FeedCommentGetRes> feedCommentGet1(@Valid @ParameterObject @ModelAttribute FeedCommentGetReq p){
         FeedCommentGetRes res = service.getFeedComment(p);
         return ResultResponse.<FeedCommentGetRes>builder().
                 resultData(res).

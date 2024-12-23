@@ -23,7 +23,7 @@ public class MyErrorResponse extends ResultResponse<String> {
     // 어떤 필드 였고, 에러 메세지를 묶음으로 담을 객체를 만들 때 사용
 
     @Getter
-    @Builder
+    @SuperBuilder
     @RequiredArgsConstructor
     public static class ValidationErrors {
         private String field;

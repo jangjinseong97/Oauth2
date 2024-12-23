@@ -1,5 +1,8 @@
 package com.green.greengram.common.exception;
 
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
@@ -22,7 +25,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     // 우리가 커스텀한 예외가 발생되었을 경우 캐치
     @ExceptionHandler(CustomException.class)
     public ResponseEntity<Object> handleException(CustomException e) {
-        return null;
+        return handleExceptionInternal(e.getErrorCode());
     }
 
     // validation 예외가 발생되었을 경우 캐치
@@ -31,9 +34,43 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                                                                   HttpHeaders headers,
                                                                   HttpStatusCode statusCode,
                                                                   WebRequest request){
-        return null;
+        return handleExceptionInternal(CommonErrorCode.INVALID_PARAMETER, ex);
+    }
+//    @ExceptionHandler(SignatureException.class) //토큰이 오염 되었을 때
+//    public ResponseEntity<Object> handleSignatureException() {
+//        return handleExceptionInternal(UserErrorCode.UNAUTHENTICATED);
+//    }
+    // 아래에 합쳐줌
+
+//    // jsonwebtoken 껄 사용해야됨
+    @ExceptionHandler({MalformedJwtException.class,java.security.SignatureException.class}) //토큰 값이 유효하지 않을 때
+    public ResponseEntity<Object> handleMalformedJwtException() {
+        return handleExceptionInternal(UserErrorCode.INVALID_TOKEN);
     }
 
+    @ExceptionHandler(ExpiredJwtException.class) //토큰이 만료가 되었을 때
+    public ResponseEntity<Object> handleExpiredJwtException() {
+        return handleExceptionInternal(UserErrorCode.EXPIRED_TOKEN);
+    }
+
+    private ResponseEntity<Object> handleExceptionInternal(ErrorCode errorCode){
+        return handleExceptionInternal(errorCode, null);
+    }
+
+    // 위 아래로 예외가 들어왔을때, 안들어왔을 때
+
+    private ResponseEntity<Object> handleExceptionInternal(ErrorCode errorCode, BindException e){
+        return ResponseEntity.status(errorCode.getHttpStatus())
+                .body(makeErrorResponse(errorCode, e));
+    }
+
+    private MyErrorResponse makeErrorResponse(ErrorCode errorCode, BindException e){
+        return MyErrorResponse.builder()
+                .resultMsg(errorCode.getMessage())
+                .resultData(errorCode.name())
+                .valids(e == null ? null : getValidationError(e))
+                .build();
+    }
 
     private List<MyErrorResponse.ValidationErrors> getValidationError(BindException e){
         // enum이라 리스트 내부에 저런식으로 작성

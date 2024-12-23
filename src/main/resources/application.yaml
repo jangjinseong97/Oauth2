@@ -15,6 +15,9 @@ spring:
     # 위처럼 log4jdbc를 넣어줘야 쿼리문의 로그가 찍힘
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     # 이것도 같이 작성 해줘야 됨
+  jackson:
+    default-property-inclusion: non_null
+
   servlet:
     multipart:
       max-file-size: 15MB

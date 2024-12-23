@@ -1,5 +1,6 @@
 package com.green.greengram.config.sercurity;
 
+import com.green.greengram.config.jwt.JwtAuthenticationEntryPoint;
 import com.green.greengram.config.jwt.TokenAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -22,6 +23,8 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 @RequiredArgsConstructor
 public class WebSecurityConfig {
     private final TokenAuthenticationFilter tokenAuthenticationFilter;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+
 
 //    // 스프링 시큐리트 기능 비활성화(관여하지 않았으면 하는 부분)
 //    @Bean
@@ -55,6 +58,8 @@ public class WebSecurityConfig {
                                 // patch 방식으로 저 주소값일때 허용
                             .anyRequest().permitAll())
                             // 나머지는 다 허용 >> 무조건 아래 있어야 함 위에 있으면 전부 허용이 되어버림
+                .exceptionHandling(e -> e.authenticationEntryPoint(jwtAuthenticationEntryPoint))
+                // exception 이 작동이 되면 주소값이 실행
                 .addFilterBefore(tokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }

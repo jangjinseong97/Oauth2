@@ -2,6 +2,8 @@ package com.green.greengram.user;
 
 import com.green.greengram.common.CookieUtils;
 import com.green.greengram.common.MyFileUtils;
+import com.green.greengram.common.exception.CustomException;
+import com.green.greengram.common.exception.UserErrorCode;
 import com.green.greengram.config.jwt.JwtUser;
 import com.green.greengram.config.jwt.TokenProvider;
 import com.green.greengram.user.model.*;
@@ -70,24 +72,31 @@ public class UserService {
         String uid = p.getUid();
         UserSignInRes res = mapper.selUserByUid(uid);
 
-        if(res == null){
-            res = new UserSignInRes();
-            res.setMsg("아이디 확인");
-            return res;
+        if(res == null || !passwordEncoder.matches(p.getUpw(), res.getUpw())){
+            throw new CustomException(UserErrorCode.INCORRECT_ID_PW);
         }
-        log.info(p.toString());
-//        if(!BCrypt.checkpw(p.getUpw(),res.getUpw())){
-        if(!passwordEncoder.matches(p.getUpw(),res.getUpw())){
-            res = new UserSignInRes();
-            res.setMsg("비밀번호 확인");
-            return res;
-        }
+
+        // 위의 코드가 아래의 코드들 역할
+//        if(res == null){
+//            res = new UserSignInRes();
+//            res.setMsg("아이디 확인");
+//            return res;
+//        }
+//        log.info(p.toString());
+////        if(!BCrypt.checkpw(p.getUpw(),res.getUpw())){
+//        if(!passwordEncoder.matches(p.getUpw(),res.getUpw())){
+//            res = new UserSignInRes();
+//            res.setMsg("비밀번호 확인");
+//            return res;
+//        }
+
         JwtUser jwtUser = new JwtUser();
         jwtUser.setSignedUserId(res.getUserId());
         jwtUser.setRoles(new ArrayList<>(2));
         jwtUser.getRoles().add("ROLE_USER");
         jwtUser.getRoles().add("ADMIN");
-        String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofMinutes(20));
+//        String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofMinutes(20));
+        String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofSeconds(30));
         String refreshToken =tokenProvider.generateToken(jwtUser, Duration.ofDays(15));
 
         res.setAccessToken(accessToken);

@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.annotations.ParameterObject;
@@ -35,13 +36,13 @@ public class UserController {
     }
     @PostMapping("sign-in")
     @Operation(summary = "유저 로그인")
-    public ResultResponse<UserSignInRes> signIn(@RequestBody UserSignInReq p,
+    public ResultResponse<UserSignInRes> signIn(@Valid @RequestBody UserSignInReq p,
                                                 HttpServletResponse resp) {
         UserSignInRes res = service.signIn(p, resp);
         log.info(res.toString());
 
         return ResultResponse.<UserSignInRes>builder().
-                resultMsg(res.getMsg()).
+                resultMsg("로그인 성공").
                 resultData(res).
                 build();
     }

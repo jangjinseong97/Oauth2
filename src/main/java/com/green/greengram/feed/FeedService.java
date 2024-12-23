@@ -1,6 +1,8 @@
 package com.green.greengram.feed;
 
 import com.green.greengram.common.MyFileUtils;
+import com.green.greengram.common.exception.CustomException;
+import com.green.greengram.common.exception.FeedErrorCode;
 import com.green.greengram.config.sercurity.AuthenticationFacade;
 import com.green.greengram.feed.comment.FeedCommentMapper;
 import com.green.greengram.feed.comment.model.FeedCommentDto;
@@ -33,10 +35,14 @@ public class FeedService {
     // sql에 넣을 때 오토커밋을 자동으로 끄고 에러가 없을 때만 커밋을 해주는 에노테이션
     public FeedPostRes postFeed(List<MultipartFile> pics,
                                 FeedPostReq p){
+
         p.setWriterUserId(authenticationFacade.getSignedUserId());
 
         log.info("service {}",p.toString());
         int result = feedMapper.insFeed(p);
+        if(result == 0){
+            throw new CustomException(FeedErrorCode.FAIL_TO_REG);
+        }
         long feedId = p.getFeedId();
 
         String picFolderPath = String.format("feed/%d", feedId);
@@ -69,7 +75,9 @@ public class FeedService {
             try{
                 myFileUtils.transferTo(pic,filePath);
             } catch (IOException e) {
-                e.printStackTrace();
+                String delFolderPath = String.format("%s/%s",myFileUtils.getUploadPath(),picFolderPath);
+                myFileUtils.deleteFolder(delFolderPath,true);
+                throw new CustomException(FeedErrorCode.FAIL_TO_REG);
             }
             picNames.add(file);
 //      feedPicDto.setPic(file);

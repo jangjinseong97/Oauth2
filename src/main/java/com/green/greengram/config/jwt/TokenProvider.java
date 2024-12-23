@@ -2,6 +2,8 @@ package com.green.greengram.config.jwt;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.green.greengram.common.exception.CustomException;
+import com.green.greengram.common.exception.UserErrorCode;
 import com.green.greengram.config.sercurity.MyUserDetails;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
@@ -93,18 +95,18 @@ public class TokenProvider {
     // 객체 자체를 JWT에 담고 싶어 객체를 직렬화
     // 즉 jwtUser에 담고 있는 데이터를 Json형태의 문자열로 바꿔줌
 
-    public boolean validToken(String token) {
-        // 검증을 위해
-        try{
-            //jwt 복호화
-            getClaims(token);
+//    public boolean validToken(String token) {
+//        // 검증을 위해
+//        try{
+//            //jwt 복호화
+//            getClaims(token);
+////            return true;
+//        } catch (Exception e) {
+//            throw new CustomException(UserErrorCode.EXPIRED_TOKEN);
+//        }
 //            return true;
-        } catch (Exception e) {
-            return false;
-        }
-            return true;
-        // 큰차이는 없지만 try안에는 코드가 적을수록 좋아서 빼주는게 좋긴함
-    }
+//        // 큰차이는 없지만 try안에는 코드가 적을수록 좋아서 빼주는게 좋긴함
+//    }
 
     // spring security 가 인증/인가 할때 사용하는 개체
     // 인증을 위해 객체에 토큰이 있으면 승인/인가 처리 아니면 비승인
