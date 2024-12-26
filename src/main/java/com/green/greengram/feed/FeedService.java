@@ -16,10 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -230,6 +227,109 @@ public class FeedService {
             r.setComment(feedCommentGetRes);
         }
 
+        return res;
+    }
+    // select 2번으로 줄이기
+    public List<FeedGetRes> getFeedList2(FeedGetReq p){
+        // feed + feed_pic 으로 1번
+        // feed_comment 로 1번
+        List<FeedGetRes> list = new ArrayList<>(p.getSize());
+        List<FeedGetRes> list1 = new ArrayList<>(p.getSize());
+
+
+        // feed + feed_pic
+        List<FeedAndPicDto> feedAndPicDtoList = feedMapper.selFeedListWithPicListFix(p);
+        Map<Long, FeedGetRes> feedMap = new LinkedHashMap<>();
+        Map<Long, List<String>> feedPics = new LinkedHashMap<>();
+        for(FeedAndPicDto dto : feedAndPicDtoList){
+            long feedId = dto.getFeedId();
+            if(!feedMap.containsKey(feedId)){
+                FeedGetRes res = new FeedGetRes();
+                feedMap.put(feedId, res);
+                feedPics.put(feedId, new ArrayList<>());
+                res.setFeedId(dto.getFeedId());
+                res.setWriterUserId(dto.getWriterUserId());
+                res.setWriterNm(dto.getWriterNm());
+                res.setWriterPic(dto.getWriterPic());
+                res.setContents(dto.getContents());
+                res.setLocation(dto.getLocation());
+                res.setIsLike(dto.getIsLike());
+                res.setCreatedAt(dto.getCreatedAt());
+                feedMap.put(feedId, res);
+            }
+            feedPics.get(feedId).add(dto.getPic());
+            feedMap.get(feedId).setPics(feedPics.get(feedId));
+        }
+        list.addAll(feedMap.values());
+
+        FeedGetRes res = new FeedGetRes();
+        for(FeedAndPicDto dto : feedAndPicDtoList){
+            if(res.getFeedId() != dto.getFeedId()){
+                res = new FeedGetRes();
+                res.setPics(new ArrayList<>());
+                // feedId 가 없을때만 새 res 주소값을 주고
+                // 그때 비었을 pics를 생성
+
+                list1.add(res);
+                // 새로 생성한 res 를 List<FeedGetRes>인 list에 넣어줌
+                res.setFeedId(dto.getFeedId());
+                res.setWriterUserId(dto.getWriterUserId());
+                res.setWriterNm(dto.getWriterNm());
+                res.setWriterPic(dto.getWriterPic());
+                res.setContents(dto.getContents());
+                res.setIsLike(dto.getIsLike());
+                res.setLocation(dto.getLocation());
+                res.setCreatedAt(res.getCreatedAt());
+
+            }
+        }
+
+        List<Long> feedIds = new ArrayList<>(feedAndPicDtoList.size());
+        for(FeedAndPicDto r : feedAndPicDtoList){
+            feedIds.add(r.getFeedId());
+        }
+
+        List<FeedCommentDto> feedCommentDtoList = feedCommentMapper.selFeedCommentListByFeedIds(feedIds);
+        Map<Long, FeedCommentGetRes> commentMap = new HashMap<>();
+        for(FeedCommentDto dto : feedCommentDtoList){
+            long feedId = dto.getFeedId();
+            if(!commentMap.containsKey(feedId)){
+                FeedCommentGetRes feedCommentGetRes = new FeedCommentGetRes();
+                feedCommentGetRes.setCommentList(new ArrayList<>());
+                commentMap.put(feedId, feedCommentGetRes);
+            }
+            FeedCommentGetRes feedCommentGetRes = commentMap.get(feedId);
+            feedCommentGetRes.getCommentList().add(dto);
+        }
+
+        for(FeedGetRes r : list1){
+            r.setPics(feedPics.get(r.getFeedId()));
+            FeedCommentGetRes feedCommentGetRes = commentMap.get(r.getFeedId());
+
+            if(feedCommentGetRes == null){
+                feedCommentGetRes = new FeedCommentGetRes();
+                feedCommentGetRes.setCommentList(new ArrayList<>());
+            } else if(feedCommentGetRes.getCommentList().size()==4){
+                feedCommentGetRes.setMoreComment(true);
+                feedCommentGetRes.getCommentList().remove(feedCommentGetRes.getCommentList().size()-1);
+            }
+            r.setComment(feedCommentGetRes);
+        }
+
+
+
+
+
+        return list1;
+    }
+
+    public List<FeedGetRes> getFeedList4(FeedGetReq p){
+        List<FeedWithPicCommentDto> dtoList = feedMapper.selFeedWithPicAndCommentList(p);
+        List<FeedGetRes> res = new ArrayList<>(dtoList.size());
+        for(FeedWithPicCommentDto dto : dtoList){
+            FeedGetRes res1 = new FeedGetRes(dto);
+            res.add(res1);
+        }
         return res;
     }
 

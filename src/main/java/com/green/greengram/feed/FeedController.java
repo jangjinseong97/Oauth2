@@ -24,7 +24,9 @@ public class FeedController {
 
     @PostMapping
     public ResultResponse<FeedPostRes> postFeed(@RequestPart List<MultipartFile> pics,
-                                                @Valid @RequestPart FeedPostReq p){
+                                                @Valid
+
+                                                @RequestPart FeedPostReq p){
         log.info("feedC postFeed p: {}",p.toString());
         FeedPostRes res =feedService.postFeed(pics, p);
         return ResultResponse.<FeedPostRes>builder().
@@ -51,9 +53,28 @@ public class FeedController {
     }
 
     @GetMapping("/3")
+    @Operation(summary = "n+1 해결 select 3번으로")
     public ResultResponse<List<FeedGetRes>> getFeedList3(@Valid @ParameterObject @ModelAttribute FeedGetReq p){
         log.info("feedC getFeedList p: {}",p);
         List<FeedGetRes> list = feedService.getFeedList3(p);
+        return ResultResponse.<List<FeedGetRes>>builder().
+                resultMsg(String.format("%d row",list.size())).resultData(list).build();
+    }
+
+    @GetMapping("/2")
+    @Operation(summary = "n+1 해결 select 2번으로")
+    public ResultResponse<List<FeedGetRes>> getFeedList2(@Valid @ParameterObject @ModelAttribute FeedGetReq p){
+        log.info("feedC getFeedList p: {}",p);
+        List<FeedGetRes> list = feedService.getFeedList2(p);
+        return ResultResponse.<List<FeedGetRes>>builder().
+                resultMsg(String.format("%d row",list.size())).resultData(list).build();
+    }
+
+    @GetMapping("/4")
+    @Operation(summary = "n+1 해결 mybatis 로")
+    public ResultResponse<List<FeedGetRes>> getFeedList4(@Valid @ParameterObject @ModelAttribute FeedGetReq p){
+        log.info("feedC getFeedList p: {}",p);
+        List<FeedGetRes> list = feedService.getFeedList4(p);
         return ResultResponse.<List<FeedGetRes>>builder().
                 resultMsg(String.format("%d row",list.size())).resultData(list).build();
     }

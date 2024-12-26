@@ -1,0 +1,9 @@
+file:
+  directory: /home/download
+
+spring:
+  datasource:
+    username: even_first_5
+    password: green502
+    url: jdbc:log4jdbc:mariadb://192.168.0.144/db_even_first_5
+    # 서버컴 ip 주소

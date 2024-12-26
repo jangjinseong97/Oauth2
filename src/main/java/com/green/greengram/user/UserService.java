@@ -96,7 +96,7 @@ public class UserService {
         jwtUser.getRoles().add("ROLE_USER");
         jwtUser.getRoles().add("ADMIN");
 //        String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofMinutes(20));
-        String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofSeconds(30));
+        String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofMinutes(30));
         String refreshToken =tokenProvider.generateToken(jwtUser, Duration.ofDays(15));
 
         res.setAccessToken(accessToken);
