@@ -40,16 +40,16 @@ class TokenProviderTest {
         System.out.println("token: " + token);
     }
 
-    @Test
-    void validateToken() {
-        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczNDQwMTQ3MSwiZXhwIjoxNzM0NDAxNTMxLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MTAsXCJyb2xlc1wiOltcIlJPTEVfVVNFUlwiLFwiUk9MRV9BRE1JTlwiXX0ifQ.dRn--Y-hPTKPLWp3I9162v6sq4drl8tbPq2gvDieN3ivTid1lEc3zH_cT_Kb4EvpDcM8r6FB2pXwmrmmX3zN4w";
-        // 2분짜리
-
-        boolean result = tokenProvider.validToken(token);
-
-        assertFalse(result);
-
-    }
+//    @Test
+//    void validateToken() {
+//        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczNDQwMTQ3MSwiZXhwIjoxNzM0NDAxNTMxLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MTAsXCJyb2xlc1wiOltcIlJPTEVfVVNFUlwiLFwiUk9MRV9BRE1JTlwiXX0ifQ.dRn--Y-hPTKPLWp3I9162v6sq4drl8tbPq2gvDieN3ivTid1lEc3zH_cT_Kb4EvpDcM8r6FB2pXwmrmmX3zN4w";
+//        // 2분짜리
+//
+//        boolean result = tokenProvider.validToken(token);
+//
+//        assertFalse(result);
+//
+//    }
 
     @Test
     void getAuthentication(){

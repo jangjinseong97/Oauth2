@@ -323,12 +323,15 @@ public class FeedService {
         return list1;
     }
 
+    // select 1번
     public List<FeedGetRes> getFeedList4(FeedGetReq p){
         List<FeedWithPicCommentDto> dtoList = feedMapper.selFeedWithPicAndCommentList(p);
         List<FeedGetRes> res = new ArrayList<>(dtoList.size());
         for(FeedWithPicCommentDto dto : dtoList){
-            FeedGetRes res1 = new FeedGetRes(dto);
-            res.add(res1);
+//            FeedGetRes res1 = new FeedGetRes(dto);
+//            res.add(res1);
+            res.add(new FeedGetRes(dto));
+            // 맨날 깜박하는 바로 집어넣어도 괜찮음
         }
         return res;
     }
