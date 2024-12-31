@@ -4,6 +4,7 @@ import com.green.greengram.TestUtils;
 import com.green.greengram.feed.like.model.FeedLikeReq;
 import com.green.greengram.feed.like.model.FeedLikeVo;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
@@ -71,6 +72,7 @@ class FeedLikeMapperTest {
 
 
     @Test
+    @DisplayName("중복된 테이터 입력시 DuplicateKeyException 발생 채크")
     void insFeedLikeDuplicatedDataThrowDuplicateKeyException() {
         //given (준비)
         // L은 long타입을 명시 해주는 것

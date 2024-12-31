@@ -63,6 +63,15 @@ class FeedPicMapperTest {
 
 
         // 아래 containsAll 이 돌아가는 방식
+        // feedPicListAfter 에서 pic만 뽑아내서 List<String>으로 변현하고 채크 혹은 스트림을 이용
+        List<String> feedOnlyPicList = new ArrayList<>(feedPicListAfter.size());
+//        for(int i=0; i<feedPicListAfter.size(); i++){
+//            feedOnlyPicList.add(feedPicListAfter.get(i).getPic());
+//        }
+        for(FeedPicVo pic : feedPicListAfter){
+            feedOnlyPicList.add(pic.getPic());
+        }
+
         List<String> picsList = Arrays.asList(pics);
         for(int i=0; i<picsList.size(); i++){
             String pic = picsList.get(i);
@@ -71,12 +80,33 @@ class FeedPicMapperTest {
 //                return false;
 //            }
         }
+        // 스트림 이용 (predicate 리턴타입o boolean , 파라미터o FeedPicVo)
+        feedPicListAfter.stream().allMatch(feedPicVo -> picsList.contains(feedPicVo.getPic()));
 
         assertAll(
-                () -> assertEquals(pics.length, actualAffectedRows)
+                // forEach 에서 내부적으로 stream() 으로 만들어서 사용
+                () -> feedPicListAfter.forEach(feedPicVo -> TestUtils.assertCurrenTimeStamp(feedPicVo.getCreatedAt()))
+                // ,() ->  for(FeedPicVo feedPicVo : feedPicListAfter) {
+                //              TestUtils.assertCurrentTimestamp(feedPicVo.getCreatedAt()); }
+                // 위의 forEach 와 같음
+
+                , () -> assertEquals(pics.length, actualAffectedRows)
                 , () -> assertEquals(0, feedPicListBefore.size())
                 , () -> assertEquals(pics.length, feedPicListAfter.size())
-                , () -> assertTrue(feedPicListAfter.containsAll(Arrays.asList(pics)))
+                , () -> assertTrue(feedOnlyPicList.containsAll(Arrays.asList(pics)))
+                , () -> assertTrue(feedPicListAfter.stream().allMatch(feedPicVo -> picsList.contains(feedPicVo.getPic())))
+
+                , () -> assertTrue(feedPicListAfter.stream() // 스트림 생성 Stream<FeedPicVo>
+                                                            .map(FeedPicVo :: getPic) // 같은 크기의 새로은 반환 Stream<String> ["a.jpg" , "b.jpg" , "c.jpg"]
+                                                            .filter(pic -> picsList.contains(pic)) // 필터는 연산 결과가 true인 것만 뽑아내서 새로운 스트림 반환 Stream<String> ["a.jpg" , "b.jpg" , "c.jpg"]
+                                                            .limit(picsList.size()) // 스트림 크기 제한, 이전 스트림의 크기가 10개인데 limit(2)를 하면 2개짜리 스트림이 반환
+                                                            .count() == picsList.size())
+
+                // function return type 0 (String) , parameter 0 (FeedPicVo)
+                , () -> assertTrue(feedPicListAfter.stream().map(feedPicVo -> feedPicVo.getPic()) // ["a.jpg" , "b.jpg" , "c.jpg"]
+                        .toList() // 스트림 > List
+                        .containsAll(Arrays.asList(pics)))
+
 
         );
 
