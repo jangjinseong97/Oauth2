@@ -119,8 +119,13 @@ class FeedServiceTest {
 
         FeedPostReq actualParam = new FeedPostReq();
         actualParam.setLocation(LOCATION);
+        MultipartFile mpf1 = new MockMultipartFile("pics", "test1.txt", "text/plain", "This is test1 file".getBytes());
+        List<MultipartFile> pics = new ArrayList<>(1);
+        pics.add(mpf1);
+        FeedPostRes actualResult = feedService.postFeed(pics, actualParam);
+//        FeedPostRes actualResult = feedService.postFeed(null, actualParam);
+        // 이걸로 검증 하려면 아래에 pic들이 null이 아닐때 처리하는 부분을 주석처리 해줘야 된다.
 
-        FeedPostRes actualResult = feedService.postFeed(null, actualParam);
         String picFolderPath = String.format("feed/%d", FEED_ID_10);
         verify(myFileUtils).makeFolder(picFolderPath);
     }
