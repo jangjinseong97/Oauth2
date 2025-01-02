@@ -1,5 +1,6 @@
 package com.green.greengram.feed.like;
 
+import com.green.greengram.config.sercurity.AuthenticationFacade;
 import com.green.greengram.feed.like.model.FeedLikeReq;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,9 +11,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class FeedLikeService {
     private final FeedLikeMapper mapper;
-
+    private final AuthenticationFacade authenticationFacade;
 
     public int feedLikeToggle(FeedLikeReq p){
+        p.setUserId(authenticationFacade.getSignedUserId());
         int res = mapper.delFeedLike(p);
         // 먼저 좋아요를 삭제 해봄 되면 1 안되면 0
         if(res == 0){

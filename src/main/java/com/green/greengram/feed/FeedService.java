@@ -35,7 +35,7 @@ public class FeedService {
 
         p.setWriterUserId(authenticationFacade.getSignedUserId());
 
-        log.info("service {}",p.toString());
+        log.info("service {}",p);
         int result = feedMapper.insFeed(p);
         if(result == 0){
             throw new CustomException(FeedErrorCode.FAIL_TO_REG);
@@ -60,7 +60,8 @@ public class FeedService {
 //            feedMapper.insPicDto(feedPicDto);
 //        }
 
-
+//        return null;
+        //test 를 보기위해 아래 주석처리
 
         List<String> picNames = new ArrayList<>(pics.size());
 
