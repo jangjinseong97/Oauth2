@@ -21,22 +21,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-class FeedServiceTest {
-    @Mock FeedMapper feedMapper;
-    @Mock FeedPicMapper feedPicMapper;
-    @Mock FeedCommentMapper feedCommentMapper;
-    @Mock MyFileUtils myFileUtils;
-    @Mock AuthenticationFacade authenticationFacade;
-    @InjectMocks FeedService feedService;
-
-    final long SIGNED_USER_ID = 3L;
-    final long FEED_ID_10 = 10L;
-    final String LOCATION = "테스트 위치";
+class FeedServiceForPostFeedTest extends FeedServiceParentTest {
     @Test
     @DisplayName("insert 시 영향받은 행이 0개일 때 예외 발생")
     void postFeedInsRows0ThrowException(){
@@ -84,6 +73,7 @@ class FeedServiceTest {
         }).when(myFileUtils).transferTo(mpf1,givenFilePath1);
         // doAnswer 는 given과 같은 역할을하지만 void 일때는 given이 사용 불가능 해서 doAnswer를 사용
         // 이때 정상적으로 들어왔을 때 에러를 터트리라고 한 것
+        // when 에서 메소드 호출금지
 
         List<MultipartFile> pics = new ArrayList<>(1);
         pics.add(mpf1);

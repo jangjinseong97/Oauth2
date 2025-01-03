@@ -2,10 +2,7 @@ package com.green.greengram.feed.model;
 
 import com.green.greengram.feed.comment.model.FeedCommentDto;
 import com.green.greengram.feed.comment.model.FeedCommentGetRes;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +11,7 @@ import java.util.List;
 @Setter
 @ToString
 @NoArgsConstructor // 기본생성자 생성
+@EqualsAndHashCode
 public class FeedGetRes {
     private long feedId;
     private long writerUserId;
@@ -38,13 +36,20 @@ public class FeedGetRes {
         this.isLike = dto.getIsLike();
         this.pics = dto.getPics();
         this.comment = new FeedCommentGetRes();
+//        if(dto.getCommentList().size() == 4) {
+//            this.comment.setMoreComment(true);
+//            dto.getCommentList().remove(dto.getCommentList().size() - 1);
+//        }
+//        this.comment.setCommentList(dto.getCommentList());
+//    }
         List<FeedCommentDto> list = dto.getCommentList();
-        if(list == null){
+        if (list == null) {
             comment.setCommentList(new ArrayList<>());
-        } else if(list.size() == 4){
-            list.remove(list.size()-1);
         }
-        comment.setMoreComment(list.size()==4);
+        comment.setMoreComment(list.size() == 4);
+        if (list.size() == 4) {
+            list.remove(list.size() - 1);
+        }
         comment.setCommentList(list);
     }
 }

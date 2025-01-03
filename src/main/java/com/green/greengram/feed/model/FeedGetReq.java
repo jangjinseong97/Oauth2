@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.green.greengram.common.model.Paging;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Positive;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.BindParam;
 @Getter
 @ToString(callSuper = true)
 @Slf4j
+@EqualsAndHashCode
 public class FeedGetReq extends Paging {
 
 //    @Schema(title = "로그인 유저 pk", name = "signed_user_id")
