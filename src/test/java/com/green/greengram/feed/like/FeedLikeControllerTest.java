@@ -44,7 +44,9 @@ class FeedLikeControllerTest {
         FeedLikeReq givenParam = getGivenParam();
         given(feedLikeService.feedLikeToggle(givenParam)).willReturn(result);
         ResultActions resultActions = mockMvc.perform(get(BASE_URL).queryParams(getParameter()));
+        // get방식  요청 보냄
         String expectedResJson = getExpectedResJson(result);
+        // get방식의 기대 응답의 json을 저장
         resultActions.andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedResJson));

@@ -29,7 +29,8 @@ public class FeedCommentController {
         return ResultResponse.<Long>builder().
                 resultMsg("작성 완료").resultData(res).build();
     }
-    @GetMapping("Parameter")
+//    @GetMapping("Parameter")
+    @GetMapping
     @Operation(summary = "BindParam")
     public ResultResponse<FeedCommentGetRes> feedCommentGet1(@Valid @ParameterObject @ModelAttribute FeedCommentGetReq p){
         FeedCommentGetRes res = service.getFeedComment(p);
@@ -39,7 +40,7 @@ public class FeedCommentController {
                 build();
     }
 
-    @GetMapping
+    @GetMapping("aa")
     @Operation(summary = "RequestParam")
     public ResultResponse<FeedCommentGetRes> feedCommentGet(@RequestParam("start_idx") int sIdx,
                                                             @RequestParam("feed_id") long feedId,

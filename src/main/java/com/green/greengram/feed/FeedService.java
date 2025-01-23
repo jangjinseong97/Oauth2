@@ -118,7 +118,7 @@ public class FeedService {
 
 //            commentGetReq.setPage(1);
 //            commentGetReq.setSize();
-            commentGetReq.setFeedId(r.getFeedId());
+//            commentGetReq.setFeedId(r.getFeedId());
 
             List<FeedCommentDto> commentList = feedCommentMapper.selFeedCommentListBy(commentGetReq);
             FeedCommentGetRes commentGetRes = new FeedCommentGetRes();

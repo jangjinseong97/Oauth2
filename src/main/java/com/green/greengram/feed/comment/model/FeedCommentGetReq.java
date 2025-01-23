@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,8 +13,9 @@ import org.springframework.web.bind.annotation.BindParam;
 import java.beans.ConstructorProperties;
 
 @Getter
-@Setter
+//@Setter
 @ToString
+@EqualsAndHashCode
 public class FeedCommentGetReq {
 
 //    private final static int FIRST_COMMENT_SIZE = 3;
@@ -36,8 +38,8 @@ public class FeedCommentGetReq {
 @ConstructorProperties({"feed_id", "start_idx", "size"})
 public FeedCommentGetReq(long feedId, int sIdx, Integer size) {
         this.feedId = feedId;
-        this.size = (size == null ? DEFAULT_PAGE_SIZE : size) + 1;
         this.sIdx = sIdx;
+        this.size = (size == null ? DEFAULT_PAGE_SIZE : size) + 1;
     }
 
 //    public FeedCommentGetReq(@BindParam("feed_id") long feedId, int page) {
