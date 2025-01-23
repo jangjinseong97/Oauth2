@@ -23,7 +23,7 @@ public class FeedLikeController {
         log.info("FeedLC {}",p);
         int result = service.feedLikeToggle(p);
         return ResultResponse.<Integer>builder().
-                resultMsg(result == 0 ? "좋아요 취소" : "좋아요").
+                resultMsg(result == 0 ? "좋아요 취소" : "좋아요 등록").
                 resultData(result).
                 build();
     }

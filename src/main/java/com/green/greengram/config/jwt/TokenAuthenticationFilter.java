@@ -16,7 +16,6 @@ import java.io.IOException;
 
 @Slf4j
 @ToString
-@Component
 @RequiredArgsConstructor
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
     private final TokenProvider tokenProvider;

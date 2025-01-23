@@ -9,19 +9,18 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "GreenGram",
-                description = "그린그램 SNS",
-                version = "v1"
+                title = "GreenGram"
+                , description = "그린그램 SNS"
+                , version = "v3.1"
         )
         , security = @SecurityRequirement(name = "Authorization")
 )
-@SecurityScheme(
-        type = SecuritySchemeType.HTTP,
-                name = "Authorization",
-                in = SecuritySchemeIn.HEADER,
-                bearerFormat = "JWT",
-                scheme = "Bearer"
-)
 
-public class SwaggerConfiguration {
-}
+@SecurityScheme(
+        type = SecuritySchemeType.HTTP
+        , name = "Authorization"
+        , in = SecuritySchemeIn.HEADER
+        , bearerFormat = "JWT"
+        , scheme = "Bearer"
+)
+public class SwaggerConfiguration {}

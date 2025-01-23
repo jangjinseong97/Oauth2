@@ -2,6 +2,7 @@ package com.green.greengram.config.sercurity;
 
 import com.green.greengram.config.jwt.JwtAuthenticationEntryPoint;
 import com.green.greengram.config.jwt.TokenAuthenticationFilter;
+import com.green.greengram.config.jwt.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +23,8 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 // 호출마다 스프링컨테이너에 새로 객체를 생성
 @RequiredArgsConstructor
 public class WebSecurityConfig {
-    private final TokenAuthenticationFilter tokenAuthenticationFilter;
+//    private final TokenAuthenticationFilter tokenAuthenticationFilter;
+    private final TokenProvider tokenProvider;
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
 
@@ -60,7 +62,7 @@ public class WebSecurityConfig {
                             // 나머지는 다 허용 >> 무조건 아래 있어야 함 위에 있으면 전부 허용이 되어버림
                 .exceptionHandling(e -> e.authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 // exception 이 작동이 되면 주소값이 실행
-                .addFilterBefore(tokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new TokenAuthenticationFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
