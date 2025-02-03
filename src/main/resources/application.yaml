@@ -1,5 +1,5 @@
 file:
-  directory: D:\Students\jang jin seong\download\greengram_ver3
+  directory: D:\Students\jang jin seong\download\greengram_jpa
 
 mybatis:
   mapper-locations: mappers/**/*.xml
@@ -12,13 +12,27 @@ spring:
   datasource:
     username: root
     password: green502
-    url: jdbc:log4jdbc:mariadb://localhost/greengram_ver3
+    url: jdbc:log4jdbc:mariadb://localhost/greengram_jpa
     #url: jdbc:mariadb://localhost/greengram_ver2 기존꺼
     # 위처럼 log4jdbc를 넣어줘야 쿼리문의 로그가 찍힘
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     # 이것도 같이 작성 해줘야 됨
   jackson:
     default-property-inclusion: non_null
+
+  jpa:
+    database: mysql
+    hibernate:
+      #ddl-auto: create # entity를 서버 기동때마다 drop 후 clear함
+      ddl-auto: update # entity가 없으면 create, 기존에 존재하는 엔터티는 컬럼을 새롭게 추가하는 것만 반영
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50 # 한번에 처리
+        format_sql: true #로그 찍는용도
+        order_updates: true #JPA Batch 작업
+    show_sql: true # JPA 가 만든 쿼리문 로그에 출력
+
 
   servlet:
     multipart:

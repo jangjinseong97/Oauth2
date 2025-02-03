@@ -6,6 +6,7 @@ import com.green.greengram.common.exception.CustomException;
 import com.green.greengram.common.exception.UserErrorCode;
 import com.green.greengram.config.jwt.JwtUser;
 import com.green.greengram.config.jwt.TokenProvider;
+import com.green.greengram.entity.User;
 import com.green.greengram.user.model.*;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,6 +32,7 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final TokenProvider tokenProvider;
     private final CookieUtils cookieUtils;
+    private final UserRepository userRepository;
 
 
     public int SignUp(MultipartFile pic, UserSignUpReq p){
@@ -38,24 +40,37 @@ public class UserService {
         String fileName = pic != null ? fileUtils.makeRandomFileName(pic) : null;
 //        String hashPwd = BCrypt.hashpw(p.getUpw(), BCrypt.gensalt());
         String hashPwd = passwordEncoder.encode(p.getUpw());
-        p.setUpw(hashPwd);
-        p.setPic(fileName);
-        int res = mapper.signUp(p);
-        if(res == 0){
-            p.setMsg("중복된 아이디 입니다.");
-            return res;
+
+//        p.setUpw(hashPwd);
+//        p.setPic(fileName);
+
+        User user = new User();
+        user.setNickName(p.getNickName());
+        user.setUid(p.getUid());
+        user.setUpw(hashPwd);
+        user.setPic(fileName);
+
+//        int res = mapper.signUp(p);
+        userRepository.save(user);
+        if(pic == null){
+            return 1;
         }
 
-        long userId = p.getUserId();
+//        if(res == 0){
+//            p.setMsg("중복된 아이디 입니다.");
+//            return res;
+//        }
+//        p.setMsg("회원가입 완료");
+//        if(pic == null){
+//            return res;
+//        }
+
+        long userId = user.getUserId();
         String folderPath = String.format("user/%d",userId);
         fileUtils.makeFolder(folderPath);
         // 프로필 사진용 폴더를 처음에 만들지 않아서 후에 프로필사진을 바꿀때 폴더가 없어 에러가 터짐
         // 따라서 회원가입전에 만들어 주도록 변경
 
-        p.setMsg("회원가입 완료");
-        if(pic == null){
-            return res;
-        }
 
 //        String folderPath = String.format("user/%d",userId);
 //        fileUtils.makeFolder(folderPath);
@@ -65,14 +80,16 @@ public class UserService {
         } catch(IOException e){
             e.printStackTrace();
         }
-        return res;
+        return 1;
     }
 
     public UserSignInRes signIn(UserSignInReq p , HttpServletResponse response){
-        String uid = p.getUid();
-        UserSignInRes res = mapper.selUserByUid(uid);
 
-        if(res == null || !passwordEncoder.matches(p.getUpw(), res.getUpw())){
+        User user = userRepository.findByUid(p.getUid());
+        String uid = p.getUid();
+//        UserSignInRes res = mapper.selUserByUid(uid);
+
+        if(user == null || !passwordEncoder.matches(p.getUpw(), user.getUpw())){
             throw new CustomException(UserErrorCode.INCORRECT_ID_PW);
         }
 
@@ -91,7 +108,7 @@ public class UserService {
 //        }
 
         JwtUser jwtUser = new JwtUser();
-        jwtUser.setSignedUserId(res.getUserId());
+        jwtUser.setSignedUserId(user.getUserId());
         jwtUser.setRoles(new ArrayList<>(2));
         jwtUser.getRoles().add("ROLE_USER");
         jwtUser.getRoles().add("ADMIN");
@@ -99,13 +116,16 @@ public class UserService {
         String accessToken = tokenProvider.generateToken(jwtUser, Duration.ofMinutes(30));
         String refreshToken =tokenProvider.generateToken(jwtUser, Duration.ofDays(15));
 
-        res.setAccessToken(accessToken);
+//        res.setAccessToken(accessToken);
         // refreshToken 은 쿠키에 담음
         int maxAge = 1_296_000; // 15*24*60*60 15일의 초 값
         cookieUtils.setCookie(response,"refreshToken",refreshToken,maxAge);
-        res.setMsg("로그인 성공");
-        log.info("res: {}",res);
-        return res;
+//        res.setMsg("로그인 성공");
+//        log.info("res: {}",res);
+        return new UserSignInRes(user.getUserId(),
+                user.getNickName(),
+                user.getPic(),
+                 accessToken);
     }
 
     public UserInfoGetRes getUserInfo(UserInfoGetReq p){

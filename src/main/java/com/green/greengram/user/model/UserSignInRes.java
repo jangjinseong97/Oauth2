@@ -1,21 +1,19 @@
 package com.green.greengram.user.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
+@AllArgsConstructor
 @ToString
 public class UserSignInRes {
-    private String pic;
-    private String nickName;
-//    @JsonIgnore
     private long userId;
+    private String nickName;
+    private String pic;
+//    @JsonIgnore
     private String accessToken;
-    @JsonIgnore
-    private String upw;
-    @JsonIgnore
-    private String msg;
+
 }

@@ -25,9 +25,10 @@ public class FeedCommentController {
     public ResultResponse<Long> feedCommentPost(@RequestBody FeedCommentPostReq p){
         log.info("feedCommentP {}",p.toString());
         long result = service.insFeedComment(p);
-        long res = p.getFeedCommentId();
+//        long res = p.getFeedCommentId();
+        // 리턴으로 result를 리턴 받아서 이미 result에 pk값이 들어가있음
         return ResultResponse.<Long>builder().
-                resultMsg("작성 완료").resultData(res).build();
+                resultMsg("작성 완료").resultData(result).build();
     }
 //    @GetMapping("Parameter")
     @GetMapping
@@ -62,20 +63,22 @@ public class FeedCommentController {
                 build();
     }
 
-    @DeleteMapping
+    @DeleteMapping("delete")
     @Operation(summary = "삭제")
-    public ResultResponse<Integer> delFeedComment(@RequestParam("feed_comment_id") long feedCommentId,
-                                                  @RequestParam("signed_user_id") long signedUserId){
-        FeedCommentDelReq p = new FeedCommentDelReq(feedCommentId,signedUserId);
+    public ResultResponse<Integer> delFeedComment(@RequestParam("feed_comment_id") long feedCommentId){
+//                                                  @RequestParam("signed_user_id") long signedUserId){
+//        FeedCommentDelReq p = new FeedCommentDelReq(feedCommentId,signedUserId);
+        FeedCommentDelReq p = new FeedCommentDelReq(feedCommentId);
         log.info("delFeedComment {}",p);
         int res = service.delFeedComment(p);
         log.info("res {}",res);
         return ResultResponse.<Integer>builder().resultData(res).resultMsg("").build();
     }
-    @DeleteMapping("delete")
+    @DeleteMapping
     public ResultResponse<Integer> delFeedComment2(@ParameterObject @ModelAttribute FeedCommentDelReq p){
         log.info("delFeedComment {}",p);
         int res = service.delFeedComment(p);
         return ResultResponse.<Integer>builder().resultData(res).resultMsg("").build();
+
     }
 }

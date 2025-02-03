@@ -30,7 +30,7 @@ public class UserController {
         int res = service.SignUp(pic, p);
 
         return ResultResponse.<Integer>builder().
-                resultMsg(p.getMsg()).
+                resultMsg("").
                 resultData(res).
                 build();
     }

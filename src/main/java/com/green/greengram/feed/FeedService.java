@@ -4,6 +4,10 @@ import com.green.greengram.common.MyFileUtils;
 import com.green.greengram.common.exception.CustomException;
 import com.green.greengram.common.exception.FeedErrorCode;
 import com.green.greengram.config.sercurity.AuthenticationFacade;
+import com.green.greengram.entity.Feed;
+import com.green.greengram.entity.FeedPic;
+import com.green.greengram.entity.FeedPicIds;
+import com.green.greengram.entity.User;
 import com.green.greengram.feed.comment.FeedCommentMapper;
 import com.green.greengram.feed.comment.model.FeedCommentDto;
 import com.green.greengram.feed.comment.model.FeedCommentGetReq;
@@ -27,20 +31,34 @@ public class FeedService {
     private final FeedCommentMapper feedCommentMapper;
     private final MyFileUtils myFileUtils;
     private final AuthenticationFacade authenticationFacade;
+    private final FeedRepository feedRepository;
+    private final FeedPicRepository feedPicRepository;
 
     @Transactional
     // sql에 넣을 때 오토커밋을 자동으로 끄고 에러가 없을 때만 커밋을 해주는 에노테이션
     public FeedPostRes postFeed(List<MultipartFile> pics,
                                 FeedPostReq p){
 
-        p.setWriterUserId(authenticationFacade.getSignedUserId());
+        User signedUser = new User();
+        signedUser.setUserId(authenticationFacade.getSignedUserId());
+//        p.setWriterUserId(authenticationFacade.getSignedUserId());
+        Feed feed = new Feed();
+        feed.setWriterUser(signedUser);
+        feed.setContents(p.getContents());
+        feed.setLocation(p.getLocation());
+        // 영속성x
+        // 영속성 > Spring 과 db 사이 EM(entity maneger 가 있는데 여기 저장되는 상황이 영속성
 
         log.info("service {}",p);
-        int result = feedMapper.insFeed(p);
-        if(result == 0){
-            throw new CustomException(FeedErrorCode.FAIL_TO_REG);
-        }
-        long feedId = p.getFeedId();
+//        int result = feedMapper.insFeed(p);
+//        if(result == 0){
+//            throw new CustomException(FeedErrorCode.FAIL_TO_REG);
+//        }
+        feedRepository.save(feed);
+        // 파일 등록
+        long feedId = feed.getFeedId();
+
+
 
         String picFolderPath = String.format("feed/%d", feedId);
         myFileUtils.makeFolder(picFolderPath);
@@ -71,6 +89,15 @@ public class FeedService {
             String file = myFileUtils.makeRandomFileName(pic);
             String filePath = String.format("%s/%s",picFolderPath,file);
             try{
+                FeedPicIds ids = new FeedPicIds();
+                ids.setFeedId(feedId);
+                ids.setPic(file);
+
+                FeedPic feedPic = new FeedPic();
+                feedPic.setFeedPicIds(ids);
+                feedPic.setFeed(feed);
+                feedPicRepository.save(feedPic);
+
                 myFileUtils.transferTo(pic,filePath);
             } catch (IOException e) {
                 String delFolderPath = String.format("%s/%s",myFileUtils.getUploadPath(),picFolderPath);
@@ -83,9 +110,9 @@ public class FeedService {
 //      FeedPicDto 를 list로 바꾸기 이전엔 안에서 생성 후 호출
         }
 
-        feedPicDto.setPics(picNames);
+//        feedPicDto.setPics(picNames);
         // list로 바꿨으므로 값을 담고나서 밖에서 생성 해야 된다.
-        int resultPics = feedPicMapper.insFeedPic(feedPicDto);
+//        int resultPics = feedPicMapper.insFeedPic(feedPicDto);
 
 //        FeedPostRes res = new FeedPostRes();
 //        res.setFeedId(feedId);
@@ -339,17 +366,29 @@ public class FeedService {
 
 
     @Transactional
-    public int delFeed(FeedDelReq p){
+    public void delFeed(FeedDelReq p){
         // 피드와 관련된 정보 삭제
-        int affectedRows = feedMapper.delFeedLikeAndFeedCommentAndFeedPic(p);
+        User signedUser = new User();
+        signedUser.setUserId(authenticationFacade.getSignedUserId());
+//        Feed feed = feedRepository.findByFeedIdAndWriterUser(p.getFeedId(), signedUser)
+//                .orElseThrow(RuntimeException::new);
+//                .orElseThrow(() -> new CustomException(FeedErrorCode.FAIL_TO_DELETE));
+//        feedRepository.delete(feed);
+        int affectedRow = feedRepository.deleteFeed(p.getFeedId(), authenticationFacade.getSignedUserId());
+        if(affectedRow == 0){
+            throw new CustomException(FeedErrorCode.FAIL_TO_DELETE);
+        }
 
-        // 피드 자체 삭제
-        int affectedRowsFeed = feedMapper.delFeed(p);
 
-        // 피드관련 폴더 삭제
-        String delPath = String.format("%s/feed/%d",myFileUtils.getUploadPath(),p.getFeedId());
-        myFileUtils.deleteFolder(delPath,true);
-
-        return affectedRowsFeed;
+//        int affectedRows = feedMapper.delFeedLikeAndFeedCommentAndFeedPic(p);
+//
+//        // 피드 자체 삭제
+//        int affectedRowsFeed = feedMapper.delFeed(p);
+//
+//        // 피드관련 폴더 삭제
+//        String delPath = String.format("%s/feed/%d",myFileUtils.getUploadPath(),p.getFeedId());
+//        myFileUtils.deleteFolder(delPath,true);
+//
+//        return affectedRowsFeed;
     }
 }

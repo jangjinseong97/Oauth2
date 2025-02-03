@@ -45,10 +45,10 @@ public class FeedController {
     @DeleteMapping
     @Operation(summary = "Feed 삭제")
     public ResultResponse<Integer> delFeed(@ParameterObject @ModelAttribute FeedDelReq p){
-        int res = feedService.delFeed(p);
+        feedService.delFeed(p);
         return ResultResponse.<Integer>builder().
                 resultMsg("피드 삭제").
-                resultData(res).
+                resultData(1).
                 build();
     }
 

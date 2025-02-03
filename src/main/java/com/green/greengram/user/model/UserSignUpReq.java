@@ -2,12 +2,14 @@ package com.green.greengram.user.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
+//@Setter
+@AllArgsConstructor
 @ToString
 public class UserSignUpReq {
     @Schema(title = "아이디", requiredMode = Schema.RequiredMode.REQUIRED)
@@ -17,11 +19,11 @@ public class UserSignUpReq {
     @Schema(title = "닉네임")
     private String nickName;
 
-    @JsonIgnore
-    private String pic;
-
-    @JsonIgnore
-    private long userId;
-    @JsonIgnore
-    private String msg;
+//    @JsonIgnore
+//    private String pic;
+//
+//    @JsonIgnore
+//    private long userId;
+//    @JsonIgnore
+//    private String msg;
 }
