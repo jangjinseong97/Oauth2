@@ -11,15 +11,10 @@ import java.beans.ConstructorProperties;
 @EqualsAndHashCode
 public class FeedDelReq {
     private long feedId;
-    @JsonIgnore
-    private long signedUserId;
 
     @ConstructorProperties({"feedId"})
     public FeedDelReq(long feedId) {
         this.feedId = feedId;
     }
 
-    public void setSignedUserId(long signedUserId) {
-        this.signedUserId = signedUserId;
-    }
 }

@@ -14,7 +14,7 @@ import java.util.Optional;
 public interface FeedRepository extends JpaRepository<Feed,Long> {
     Optional<Feed> findByFeedIdAndWriterUser(Long feedId, User user);
 
-    int deleteByFeedIAndWriterUser(Long feedId, User user);
+    int deleteByFeedIdAndWriterUser(Long feedId, User user);
     // 위 2개의 경우는 selete 이후 delete, update 하기 때문에 성능상으로는 비추천함 > 단 안정적임
 
     //JPQL java persistence query language
@@ -24,5 +24,14 @@ public interface FeedRepository extends JpaRepository<Feed,Long> {
     // 내부의 from 뒤의 feed는 Feed로 해야됨(대문자로 시작) - 클래스명 작성 해야함
     int deleteFeed(@Param("feedId") Long feedId, @Param("writerUserId") Long writerUserId);
     // 쿼리문을 직접 적어줌으로 delete만 바로 적용 > @Param 의 경우 위와 이름이 같다면 생략해도 무관함
+
+    /*
+    feedId=1, writerUserId=2 라는 가정하에 아래의 sql이 만들어짐
+
+    delete from feed f
+    where f.feed_id =1
+    and f.user_id=2
+
+     */
 
 }

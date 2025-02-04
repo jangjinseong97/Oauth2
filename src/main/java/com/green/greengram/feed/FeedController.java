@@ -34,7 +34,7 @@ public class FeedController {
                 resultData(res).
                 build();
     }
-    @GetMapping
+    @GetMapping("/1")
     @Operation(summary = "feed 리스트", description = "loginUserId는 로그인한 사용자의 pk")
     public ResultResponse<List<FeedGetRes>> getFeedList(@Valid @ParameterObject @ModelAttribute FeedGetReq p){
         log.info("feedC getFeedList p: {}",p);
@@ -70,7 +70,7 @@ public class FeedController {
                 resultMsg(String.format("%d row",list.size())).resultData(list).build();
     }
 
-    @GetMapping("/4")
+    @GetMapping
     @Operation(summary = "n+1 해결 mybatis 로")
     public ResultResponse<List<FeedGetRes>> getFeedList4(@Valid @ParameterObject @ModelAttribute FeedGetReq p){
         log.info("feedC getFeedList p: {}",p);

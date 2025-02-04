@@ -15,9 +15,11 @@ public class FeedCommentPostReq {
     @Schema(requiredMode = Schema.RequiredMode.REQUIRED)
     private long feedId;
     @Schema(requiredMode = Schema.RequiredMode.REQUIRED)
-    private long userId;
-    @Schema(requiredMode = Schema.RequiredMode.REQUIRED)
     private String comment;
-    @JsonIgnore
-    private long feedCommentId;
+
+//    @Schema(requiredMode = Schema.RequiredMode.REQUIRED)
+//    private long userId;
+//    @JsonIgnore
+//    private long feedCommentId;
+    // JPA로 인해 필요가 없어짐
 }

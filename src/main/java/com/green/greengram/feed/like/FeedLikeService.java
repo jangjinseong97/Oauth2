@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class FeedLikeService {
     private final FeedLikeMapper mapper;
     private final AuthenticationFacade authenticationFacade;
+    private final FeedLikeRepository feedLikeRepository;
 
     public int feedLikeToggle(FeedLikeReq p){
         p.setUserId(authenticationFacade.getSignedUserId());

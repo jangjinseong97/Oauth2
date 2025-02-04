@@ -63,22 +63,27 @@ public class FeedCommentController {
                 build();
     }
 
-    @DeleteMapping("delete")
-    @Operation(summary = "삭제")
-    public ResultResponse<Integer> delFeedComment(@RequestParam("feed_comment_id") long feedCommentId){
-//                                                  @RequestParam("signed_user_id") long signedUserId){
-//        FeedCommentDelReq p = new FeedCommentDelReq(feedCommentId,signedUserId);
-        FeedCommentDelReq p = new FeedCommentDelReq(feedCommentId);
-        log.info("delFeedComment {}",p);
-        int res = service.delFeedComment(p);
-        log.info("res {}",res);
-        return ResultResponse.<Integer>builder().resultData(res).resultMsg("").build();
-    }
+//    @DeleteMapping("delete")
+//    @Operation(summary = "삭제")
+//    public ResultResponse<Integer> delFeedComment(@RequestParam("feed_comment_id") long feedCommentId){
+////                                                  @RequestParam("signed_user_id") long signedUserId){
+////        FeedCommentDelReq p = new FeedCommentDelReq(feedCommentId,signedUserId);
+//        FeedCommentDelReq p = new FeedCommentDelReq(feedCommentId);
+//        log.info("delFeedComment {}",p);
+//        service.delFeedComment(p);
+////        log.info("res {}",res);
+//        return ResultResponse.<Integer>builder().resultData(1).resultMsg("").build();
+//    }
     @DeleteMapping
     public ResultResponse<Integer> delFeedComment2(@ParameterObject @ModelAttribute FeedCommentDelReq p){
         log.info("delFeedComment {}",p);
-        int res = service.delFeedComment(p);
-        return ResultResponse.<Integer>builder().resultData(res).resultMsg("").build();
+        service.delFeedComment(p);
+        return ResultResponse.<Integer>builder().resultData(1).resultMsg("").build();
 
+    }
+    @DeleteMapping("JPA2")
+    public ResultResponse<Integer> delFeedComment3(@ParameterObject @ModelAttribute FeedCommentDelReq p){
+        service.delFeedComment2(p);
+        return ResultResponse.<Integer>builder().resultData(1).resultMsg("").build();
     }
 }

@@ -44,7 +44,7 @@ public class FeedService {
 //        p.setWriterUserId(authenticationFacade.getSignedUserId());
         Feed feed = new Feed();
         feed.setWriterUser(signedUser);
-        feed.setContents(p.getContents());
+        feed.setContents(p.getContents());  
         feed.setLocation(p.getLocation());
         // 영속성x
         // 영속성 > Spring 과 db 사이 EM(entity maneger 가 있는데 여기 저장되는 상황이 영속성
@@ -386,8 +386,8 @@ public class FeedService {
 //        int affectedRowsFeed = feedMapper.delFeed(p);
 //
 //        // 피드관련 폴더 삭제
-//        String delPath = String.format("%s/feed/%d",myFileUtils.getUploadPath(),p.getFeedId());
-//        myFileUtils.deleteFolder(delPath,true);
+        String delPath = String.format("%s/feed/%d",myFileUtils.getUploadPath(),p.getFeedId());
+        myFileUtils.deleteFolder(delPath,true);
 //
 //        return affectedRowsFeed;
     }
