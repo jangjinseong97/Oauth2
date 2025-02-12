@@ -4,10 +4,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
+@ToString
+//@Table(name = "feed_table") 테이블명을 클래스명이 아닌 다른걸 넣고 싶을 때
 public class Feed extends UpdatedAt{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -52,6 +52,7 @@ public class UserService {
 
 //        int res = mapper.signUp(p);
         userRepository.save(user);
+
         if(pic == null){
             return 1;
         }
