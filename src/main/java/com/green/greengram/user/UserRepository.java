@@ -1,5 +1,6 @@
 package com.green.greengram.user;
 
+import com.green.greengram.config.sercurity.oauth.userinfo.SignInProviderType;
 import com.green.greengram.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,5 +13,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // find > select / BY > where / Uid > where가 어디건지  따라서 where 부분에는 있는걸로 넣어줘야됨
     // 아니면 에러 발생
     // ex) User findByEmail(String uid); > 여기 기준 이거 실행시 email이란 튜플이 없어서 서버 기동부터 안됨
+    User findByUidAndProviderType(String uid, SignInProviderType signInProviderType);
 
 }

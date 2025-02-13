@@ -6,6 +6,7 @@ import com.green.greengram.common.exception.CustomException;
 import com.green.greengram.common.exception.UserErrorCode;
 import com.green.greengram.config.jwt.JwtUser;
 import com.green.greengram.config.jwt.TokenProvider;
+import com.green.greengram.config.sercurity.oauth.userinfo.SignInProviderType;
 import com.green.greengram.entity.User;
 import com.green.greengram.user.model.*;
 import jakarta.servlet.http.Cookie;
@@ -14,7 +15,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -45,6 +45,7 @@ public class UserService {
 //        p.setPic(fileName);
 
         User user = new User();
+        user.setProviderType(SignInProviderType.LOCAL);
         user.setNickName(p.getNickName());
         user.setUid(p.getUid());
         user.setUpw(hashPwd);
@@ -86,7 +87,8 @@ public class UserService {
 
     public UserSignInRes signIn(UserSignInReq p , HttpServletResponse response){
 
-        User user = userRepository.findByUid(p.getUid());
+//        User user = userRepository.findByUid(p.getUid());
+        User user = userRepository.findByUidAndProviderType(p.getUid(), SignInProviderType.LOCAL);
         String uid = p.getUid();
 //        UserSignInRes res = mapper.selUserByUid(uid);
 
@@ -120,7 +122,7 @@ public class UserService {
 //        res.setAccessToken(accessToken);
         // refreshToken 은 쿠키에 담음
         int maxAge = 1_296_000; // 15*24*60*60 15일의 초 값
-        cookieUtils.setCookie(response,"refreshToken",refreshToken,maxAge);
+        cookieUtils.setCookie(response,"refreshToken",refreshToken,maxAge, "/api/user/access-token");
 //        res.setMsg("로그인 성공");
 //        log.info("res: {}",res);
         return new UserSignInRes(user.getUserId(),
@@ -134,7 +136,7 @@ public class UserService {
     }
 
     public String getAccessToken(HttpServletRequest req){
-        Cookie cookie = cookieUtils.getCookie(req,"refreshToken");
+        Cookie cookie = cookieUtils.getValue(req,"refreshToken");
         String refreshToken = cookie.getValue();
         log.info("refreshToken : {}",refreshToken);
 //        UserDetails a = tokenProvider.getUserDetailsFromToken(refreshToken);
