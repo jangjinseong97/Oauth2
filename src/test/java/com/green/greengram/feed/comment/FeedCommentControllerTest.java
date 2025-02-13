@@ -131,7 +131,7 @@ class FeedCommentControllerTest {
     void delFeedComment() throws Exception {
         final int RESULT = 3;
         FeedCommentDelReq givenParam = new FeedCommentDelReq(feedCommentId_3);
-        given(feedCommentService.delFeedComment(givenParam)).willReturn(RESULT);
+//        given(feedCommentService.delFeedComment(givenParam)).willReturn(RESULT); jpa로 인해 리턴이 int에서 void로 변경되서 문제가 생김
         ResultActions resultActions= mockMvc.perform(delete(URL).queryParam("feedCommentId",String.valueOf(feedCommentId_3)));
 
         String expectedResJson = objectMapper.writeValueAsString(ResultResponse.<Integer>builder()
