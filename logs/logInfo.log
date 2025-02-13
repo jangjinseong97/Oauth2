@@ -1,814 +1,100 @@
-[2025-02-06 10:46:16 INFO background-preinit] [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 8.0.1.Final
-[2025-02-06 10:46:16 INFO restartedMain] [com.green.greengram.GreenGramApplication] Starting GreenGramApplication using Java 17.0.13 with PID 1552 (D:\Students\jang jin seong\GreenGramJPA\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramJPA)
-[2025-02-06 10:46:16 INFO restartedMain] [com.green.greengram.GreenGramApplication] No active profile set, falling back to 1 default profile: "default"
-[2025-02-06 10:46:16 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2025-02-06 10:46:16 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[2025-02-06 10:46:17 INFO restartedMain] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2025-02-06 10:46:17 INFO restartedMain] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 40 ms. Found 5 JPA repository interfaces.
-[2025-02-06 10:46:17 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
-[2025-02-06 10:46:17 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
-[2025-02-06 10:46:17 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
-[2025-02-06 10:46:17 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
-[2025-02-06 10:46:17 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
-[2025-02-06 10:46:17 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 1222 ms
-[2025-02-06 10:46:18 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
-[2025-02-06 10:46:18 INFO restartedMain] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@2057e6bc
-[2025-02-06 10:46:18 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
-[2025-02-06 10:46:18 INFO restartedMain] [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
-[2025-02-06 10:46:18 INFO restartedMain] [org.hibernate.Version] HHH000412: Hibernate ORM core version 6.5.3.Final
-[2025-02-06 10:46:18 INFO restartedMain] [org.hibernate.cache.internal.RegionFactoryInitiator] HHH000026: Second-level cache disabled
-[2025-02-06 10:46:18 INFO restartedMain] [org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo] No LoadTimeWeaver setup: ignoring JPA class transformer
-[2025-02-06 10:46:18 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
+[2025-02-12 12:40:33 INFO background-preinit] [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 8.0.1.Final
+[2025-02-12 12:40:33 INFO restartedMain] [com.green.greengram.GreenGramApplication] Starting GreenGramApplication using Java 17.0.13 with PID 5204 (D:\Students\jang jin seong\GreenGramJPAOauth2\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramJPAOauth2)
+[2025-02-12 12:40:33 INFO restartedMain] [com.green.greengram.GreenGramApplication] No active profile set, falling back to 1 default profile: "default"
+[2025-02-12 12:40:33 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2025-02-12 12:40:33 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2025-02-12 12:40:33 INFO restartedMain] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-02-12 12:40:33 INFO restartedMain] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 36 ms. Found 5 JPA repository interfaces.
+[2025-02-12 12:40:34 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
+[2025-02-12 12:40:34 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 1123 ms
+[2025-02-12 12:40:34 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[2025-02-12 12:40:34 INFO restartedMain] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@17e15ca0
+[2025-02-12 12:40:34 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[2025-02-12 12:40:34 INFO restartedMain] [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-02-12 12:40:34 INFO restartedMain] [org.hibernate.Version] HHH000412: Hibernate ORM core version 6.5.3.Final
+[2025-02-12 12:40:34 INFO restartedMain] [org.hibernate.cache.internal.RegionFactoryInitiator] HHH000026: Second-level cache disabled
+[2025-02-12 12:40:34 INFO restartedMain] [org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-02-12 12:40:34 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
 1. SELECT @@character_set_database, @@sql_mode
  {executed in 0 msec}
-[2025-02-06 10:46:18 WARN restartedMain] [org.hibernate.orm.deprecation] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2025-02-06 10:46:19 INFO restartedMain] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:34 WARN restartedMain] [org.hibernate.orm.deprecation] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-02-12 12:40:35 INFO restartedMain] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`user` where 1=0
  {executed in 0 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|----------|----|----|----|
 |user_id |created_at |updated_at |nick_name |pic |uid |upw |
 |--------|-----------|-----------|----------|----|----|----|
 |--------|-----------|-----------|----------|----|----|----|
 
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`feed` where 1=0
- {executed in 1 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+ {executed in 0 msec}
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|---------|---------|---------------|
 |feed_id |created_at |updated_at |contents |location |writer_user_id |
 |--------|-----------|-----------|---------|---------|---------------|
 |--------|-----------|-----------|---------|---------|---------------|
 
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`user` where 1=0
  {executed in 0 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|----------|----|----|----|
 |user_id |created_at |updated_at |nick_name |pic |uid |upw |
 |--------|-----------|-----------|----------|----|----|----|
 |--------|-----------|-----------|----------|----|----|----|
 
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`feed` where 1=0
  {executed in 0 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|---------|---------|---------------|
 |feed_id |created_at |updated_at |contents |location |writer_user_id |
 |--------|-----------|-----------|---------|---------|---------------|
 |--------|-----------|-----------|---------|---------|---------------|
 
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`user` where 1=0
  {executed in 0 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|----------|----|----|----|
 |user_id |created_at |updated_at |nick_name |pic |uid |upw |
 |--------|-----------|-----------|----------|----|----|----|
 |--------|-----------|-----------|----------|----|----|----|
 
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`feed` where 1=0
  {executed in 0 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|---------|---------|---------------|
 |feed_id |created_at |updated_at |contents |location |writer_user_id |
 |--------|-----------|-----------|---------|---------|---------------|
 |--------|-----------|-----------|---------|---------|---------------|
 
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`user` where 1=0
  {executed in 0 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|----------|----|----|----|
 |user_id |created_at |updated_at |nick_name |pic |uid |upw |
 |--------|-----------|-----------|----------|----|----|----|
 |--------|-----------|-----------|----------|----|----|----|
 
-[2025-02-06 10:46:19 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+[2025-02-12 12:40:35 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
 1. select * from `greengram_jpa`.`user` where 1=0
  {executed in 0 msec}
-[2025-02-06 10:46:19 INFO restartedMain] [jdbc.resultsettable] 
+[2025-02-12 12:40:35 INFO restartedMain] [jdbc.resultsettable] 
 |--------|-----------|-----------|----------|----|----|----|
 |user_id |created_at |updated_at |nick_name |pic |uid |upw |
 |--------|-----------|-----------|----------|----|----|----|
 |--------|-----------|-----------|----------|----|----|----|
 
-[2025-02-06 10:46:19 INFO restartedMain] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2025-02-06 10:46:19 INFO restartedMain] [com.green.greengram.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_jpa
-[2025-02-06 10:46:19 WARN restartedMain] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2025-02-06 10:46:20 INFO restartedMain] [org.springframework.data.jpa.repository.query.QueryEnhancerFactory] Hibernate is in classpath; If applicable, HQL parser will be used.
-[2025-02-06 10:46:20 WARN restartedMain] [org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration] 
-
-Using generated security password: 2b16a352-6e91-4e0b-a21c-d30b013dbcca
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-[2025-02-06 10:46:20 INFO restartedMain] [org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-[2025-02-06 10:46:20 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
-[2025-02-06 10:46:20 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
-[2025-02-06 10:46:20 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
-[2025-02-06 10:46:20 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
-[2025-02-06 10:46:20 INFO restartedMain] [com.green.greengram.GreenGramApplication] Started GreenGramApplication in 4.382 seconds (process running for 4.788)
-[2025-02-06 10:46:21 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2025-02-06 10:46:21 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
-[2025-02-06 10:46:21 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 0 ms
-[2025-02-06 10:46:21 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:21 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:22 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select u1_0.user_id,u1_0.created_at,u1_0.nick_name,u1_0.pic,u1_0.uid,u1_0.updated_at,u1_0.upw from user u1_0 where u1_0.uid='11111'
- {executed in 0 msec}
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-|user_id |created_at                 |nick_name |pic                                      |uid   |updated_at                 |upw                                                          |
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-|1       |2025-02-03 09:51:09.874336 |33333     |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |11111 |2025-02-03 09:51:09.874336 |$2a$10$ilpTM2m.nTJBWku68DpCTe40wmBYWBJRKL.W5sGts8f3rMFC1fRGq |
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-1] [com.green.greengram.user.UserController] UserSignInRes(userId=1, nickName=33333, pic=ab284209-a90f-488a-928a-f49e097e0cf1.jpg, accessToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjM4MiwiZXhwIjoxNzM4ODA4MTgyLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.qrPRd39tdWH8Hy60wwIf3a27uQYLSm9oaS-8BFeakQRHbZ7iH4tL6Qzk84GvIgsCkZClaxLIHMP_2m8Tr3U_PA)
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:22 ERRORhttp-nio-8080-exec-6] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-java.lang.NullPointerException: Cannot invoke "Object.getClass()" because "exception" is null
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethodByThrowable(ExceptionHandlerMethodResolver.java:146)
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethod(ExceptionHandlerMethodResolver.java:134)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.getExceptionHandlerMethod(ExceptionHandlerExceptionResolver.java:503)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:402)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
-	at com.green.greengram.config.jwt.JwtAuthenticationEntryPoint.commence(JwtAuthenticationEntryPoint.java:26)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:219)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:147)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at com.green.greengram.config.jwt.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:46)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-[2025-02-06 10:46:22 WARN http-nio-8080-exec-4] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/1/ab284209-a90f-488a-928a-f49e097e0cf1.jpg.]
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:22 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:28 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:28 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:28 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:28 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:37 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:46:37 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:46:37 ERRORhttp-nio-8080-exec-8] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-java.lang.NullPointerException: Cannot invoke "Object.getClass()" because "exception" is null
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethodByThrowable(ExceptionHandlerMethodResolver.java:146)
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethod(ExceptionHandlerMethodResolver.java:134)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.getExceptionHandlerMethod(ExceptionHandlerExceptionResolver.java:503)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:402)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
-	at com.green.greengram.config.jwt.JwtAuthenticationEntryPoint.commence(JwtAuthenticationEntryPoint.java:26)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:219)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:147)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at com.green.greengram.config.jwt.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:46)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-[2025-02-06 10:47:14 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:47:14 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:47:14 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:47:14 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:47:14 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:47:14 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:47:22 INFO SpringApplicationShutdownHook] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
-[2025-02-06 10:47:22 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
-[2025-02-06 10:47:22 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
-[2025-02-06 10:48:00 INFO background-preinit] [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 8.0.1.Final
-[2025-02-06 10:48:00 INFO restartedMain] [com.green.greengram.GreenGramApplication] Starting GreenGramApplication using Java 17.0.13 with PID 7876 (D:\Students\jang jin seong\GreenGramJPA\build\classes\java\main started by Administrator in D:\Students\jang jin seong\GreenGramJPA)
-[2025-02-06 10:48:00 INFO restartedMain] [com.green.greengram.GreenGramApplication] No active profile set, falling back to 1 default profile: "default"
-[2025-02-06 10:48:00 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2025-02-06 10:48:00 INFO restartedMain] [org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[2025-02-06 10:48:00 INFO restartedMain] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2025-02-06 10:48:00 INFO restartedMain] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 37 ms. Found 5 JPA repository interfaces.
-[2025-02-06 10:48:01 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port 8080 (http)
-[2025-02-06 10:48:01 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
-[2025-02-06 10:48:01 INFO restartedMain] [org.apache.catalina.core.StandardService] Starting service [Tomcat]
-[2025-02-06 10:48:01 INFO restartedMain] [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/10.1.33]
-[2025-02-06 10:48:01 INFO restartedMain] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
-[2025-02-06 10:48:01 INFO restartedMain] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 1099 ms
-[2025-02-06 10:48:01 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
-[2025-02-06 10:48:01 INFO restartedMain] [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@76c59b1
-[2025-02-06 10:48:01 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
-[2025-02-06 10:48:01 INFO restartedMain] [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
-[2025-02-06 10:48:01 INFO restartedMain] [org.hibernate.Version] HHH000412: Hibernate ORM core version 6.5.3.Final
-[2025-02-06 10:48:01 INFO restartedMain] [org.hibernate.cache.internal.RegionFactoryInitiator] HHH000026: Second-level cache disabled
-[2025-02-06 10:48:01 INFO restartedMain] [org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo] No LoadTimeWeaver setup: ignoring JPA class transformer
-[2025-02-06 10:48:01 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
-1. SELECT @@character_set_database, @@sql_mode
- {executed in 0 msec}
-[2025-02-06 10:48:01 WARN restartedMain] [org.hibernate.orm.deprecation] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2025-02-06 10:48:02 INFO restartedMain] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`user` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|----------|----|----|----|
-|user_id |created_at |updated_at |nick_name |pic |uid |upw |
-|--------|-----------|-----------|----------|----|----|----|
-|--------|-----------|-----------|----------|----|----|----|
-
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`feed` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|---------|---------|---------------|
-|feed_id |created_at |updated_at |contents |location |writer_user_id |
-|--------|-----------|-----------|---------|---------|---------------|
-|--------|-----------|-----------|---------|---------|---------------|
-
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`user` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|----------|----|----|----|
-|user_id |created_at |updated_at |nick_name |pic |uid |upw |
-|--------|-----------|-----------|----------|----|----|----|
-|--------|-----------|-----------|----------|----|----|----|
-
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`feed` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|---------|---------|---------------|
-|feed_id |created_at |updated_at |contents |location |writer_user_id |
-|--------|-----------|-----------|---------|---------|---------------|
-|--------|-----------|-----------|---------|---------|---------------|
-
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`user` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|----------|----|----|----|
-|user_id |created_at |updated_at |nick_name |pic |uid |upw |
-|--------|-----------|-----------|----------|----|----|----|
-|--------|-----------|-----------|----------|----|----|----|
-
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`feed` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|---------|---------|---------------|
-|feed_id |created_at |updated_at |contents |location |writer_user_id |
-|--------|-----------|-----------|---------|---------|---------------|
-|--------|-----------|-----------|---------|---------|---------------|
-
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`user` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|----------|----|----|----|
-|user_id |created_at |updated_at |nick_name |pic |uid |upw |
-|--------|-----------|-----------|----------|----|----|----|
-|--------|-----------|-----------|----------|----|----|----|
-
-[2025-02-06 10:48:02 DEBUGrestartedMain] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select * from `greengram_jpa`.`user` where 1=0
- {executed in 0 msec}
-[2025-02-06 10:48:02 INFO restartedMain] [jdbc.resultsettable] 
-|--------|-----------|-----------|----------|----|----|----|
-|user_id |created_at |updated_at |nick_name |pic |uid |upw |
-|--------|-----------|-----------|----------|----|----|----|
-|--------|-----------|-----------|----------|----|----|----|
-
-[2025-02-06 10:48:02 INFO restartedMain] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2025-02-06 10:48:02 INFO restartedMain] [com.green.greengram.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_jpa
-[2025-02-06 10:48:02 WARN restartedMain] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2025-02-06 10:48:02 INFO restartedMain] [org.springframework.data.jpa.repository.query.QueryEnhancerFactory] Hibernate is in classpath; If applicable, HQL parser will be used.
-[2025-02-06 10:48:03 WARN restartedMain] [org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration] 
-
-Using generated security password: 416dec1f-fc34-499f-be6e-8de56fd064c3
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-[2025-02-06 10:48:03 INFO restartedMain] [org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-[2025-02-06 10:48:03 INFO restartedMain] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] Adding welcome page: class path resource [static/index.html]
-[2025-02-06 10:48:03 INFO restartedMain] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] LiveReload server is running on port 35729
-[2025-02-06 10:48:03 INFO restartedMain] [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
-[2025-02-06 10:48:03 INFO restartedMain] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port 8080 (http) with context path '/'
-[2025-02-06 10:48:03 INFO restartedMain] [com.green.greengram.GreenGramApplication] Started GreenGramApplication in 3.658 seconds (process running for 4.039)
-[2025-02-06 10:48:17 INFO http-nio-8080-exec-1] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2025-02-06 10:48:17 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
-[2025-02-06 10:48:17 INFO http-nio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
-[2025-02-06 10:48:17 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:17 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:18 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select u1_0.user_id,u1_0.created_at,u1_0.nick_name,u1_0.pic,u1_0.uid,u1_0.updated_at,u1_0.upw from user u1_0 where u1_0.uid='11111'
- {executed in 0 msec}
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-|user_id |created_at                 |nick_name |pic                                      |uid   |updated_at                 |upw                                                          |
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-|1       |2025-02-03 09:51:09.874336 |33333     |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |11111 |2025-02-03 09:51:09.874336 |$2a$10$ilpTM2m.nTJBWku68DpCTe40wmBYWBJRKL.W5sGts8f3rMFC1fRGq |
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-1] [com.green.greengram.user.UserController] UserSignInRes(userId=1, nickName=33333, pic=ab284209-a90f-488a-928a-f49e097e0cf1.jpg, accessToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjQ5OCwiZXhwIjoxNzM4ODA4Mjk4LCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.RStYEa1DOAnbR3kiUyeYvUfrXAke9OQzWVm9uPHYPZwOWZS1uXWwG-XWgSrp59xTTqftNAtEalgkFKqjz5dsnQ)
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:18 ERRORhttp-nio-8080-exec-6] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-java.lang.NullPointerException: Cannot invoke "Object.getClass()" because "exception" is null
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethodByThrowable(ExceptionHandlerMethodResolver.java:146)
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethod(ExceptionHandlerMethodResolver.java:134)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.getExceptionHandlerMethod(ExceptionHandlerExceptionResolver.java:503)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:402)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
-	at com.green.greengram.config.jwt.JwtAuthenticationEntryPoint.commence(JwtAuthenticationEntryPoint.java:26)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:219)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:147)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at com.green.greengram.config.jwt.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:46)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-[2025-02-06 10:48:18 WARN http-nio-8080-exec-9] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/1/ab284209-a90f-488a-928a-f49e097e0cf1.jpg.]
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:18 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:53 DEBUGhttp-nio-8080-exec-3] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select u1_0.user_id,u1_0.created_at,u1_0.nick_name,u1_0.pic,u1_0.uid,u1_0.updated_at,u1_0.upw from user u1_0 where u1_0.uid='11111'
- {executed in 0 msec}
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-3] [jdbc.resultsettable] 
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-|user_id |created_at                 |nick_name |pic                                      |uid   |updated_at                 |upw                                                          |
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-|1       |2025-02-03 09:51:09.874336 |33333     |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |11111 |2025-02-03 09:51:09.874336 |$2a$10$ilpTM2m.nTJBWku68DpCTe40wmBYWBJRKL.W5sGts8f3rMFC1fRGq |
-|--------|---------------------------|----------|-----------------------------------------|------|---------------------------|-------------------------------------------------------------|
-
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-3] [com.green.greengram.user.UserController] UserSignInRes(userId=1, nickName=33333, pic=ab284209-a90f-488a-928a-f49e097e0cf1.jpg, accessToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjUzMywiZXhwIjoxNzM4ODA4MzMzLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.d3mvhOWgjmcRlAZTSCssdpUXU7oJj7a6_jVr-qQImfQb4lNaax4i88pjz7_o8TZSkvcPezL5hJ9kYt8oMeEtBw)
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:48:53 ERRORhttp-nio-8080-exec-8] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-java.lang.NullPointerException: Cannot invoke "Object.getClass()" because "exception" is null
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethodByThrowable(ExceptionHandlerMethodResolver.java:146)
-	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.resolveMethod(ExceptionHandlerMethodResolver.java:134)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.getExceptionHandlerMethod(ExceptionHandlerExceptionResolver.java:503)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:402)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
-	at com.green.greengram.config.jwt.JwtAuthenticationEntryPoint.commence(JwtAuthenticationEntryPoint.java:26)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:219)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:147)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at com.green.greengram.config.jwt.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:46)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-[2025-02-06 10:48:53 WARN http-nio-8080-exec-2] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/1/ab284209-a90f-488a-928a-f49e097e0cf1.jpg.]
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:48:53 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:09 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 WARN http-nio-8080-exec-6] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/1/ab284209-a90f-488a-928a-f49e097e0cf1.jpg.]
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODY0MDI0MSwiZXhwIjoxNzM4NjQyMDQxLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.tOMZvgEeqBJtWoheIC3m6SWyJIuJp6QMybiEzgdh4V15236osKHqE3n7DZVQltp_o5IjbZPM9B8jAo3SD22S5Q
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODY0MDI0MSwiZXhwIjoxNzM4NjQyMDQxLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.tOMZvgEeqBJtWoheIC3m6SWyJIuJp6QMybiEzgdh4V15236osKHqE3n7DZVQltp_o5IjbZPM9B8jAo3SD22S5Q
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 WARN http-nio-8080-exec-5] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 164515834 milliseconds ago at 2025-02-04T04:07:21.000Z. Current time: 2025-02-06T01:49:16.834Z. Allowed clock skew: 0 milliseconds.]
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODY0MDI0MSwiZXhwIjoxNzM4NjQyMDQxLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.tOMZvgEeqBJtWoheIC3m6SWyJIuJp6QMybiEzgdh4V15236osKHqE3n7DZVQltp_o5IjbZPM9B8jAo3SD22S5Q
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODY0MDI0MSwiZXhwIjoxNzM4NjQyMDQxLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.tOMZvgEeqBJtWoheIC3m6SWyJIuJp6QMybiEzgdh4V15236osKHqE3n7DZVQltp_o5IjbZPM9B8jAo3SD22S5Q
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-4] [com.green.greengram.user.UserService] refreshToken : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjUzMywiZXhwIjoxNzQwMTAyNTMzLCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.Ts3yLsdZxBi-Q_z4Cp-RYSlpaT_DAfOmiA81-d9zYp3Y8W2PZK9Ipn9MkVIannT_XcMC3x31VQejzzOAwmNVXw
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjU1NiwiZXhwIjoxNzM4ODA3NzU2LCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.oKcb4xwW9WsOKbYibyb_l7uBjhW__oqIqgOuGndowbmiuyg249Tm6SXYUGOA8EcPRGw5Q23LumjDP27U8zCt0w
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjU1NiwiZXhwIjoxNzM4ODA3NzU2LCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.oKcb4xwW9WsOKbYibyb_l7uBjhW__oqIqgOuGndowbmiuyg249Tm6SXYUGOA8EcPRGw5Q23LumjDP27U8zCt0w
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-1] [com.green.greengram.feed.model.FeedGetReq] FeedGetReq 1,null,0
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-1] [com.green.greengram.feed.FeedController] feedC getFeedList p: FeedGetReq(super=Paging(page=1, size=20, sIdx=0), signedUserId=0, profileUserId=null, likeFeed=false)
-[2025-02-06 10:49:16 DEBUGhttp-nio-8080-exec-1] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
-1. SELECT T1.*, T2.pic, t3.*
-        FROM (
-            SELECT A.feed_id AS feedId, A.contents, A.location
-            , A.created_at AS createdAt
-            , B.user_id AS writerUserId
-            , IF(B.nick_name IS NULL, B.uid, B.nick_name) AS writerNm
-            , B.pic AS writerPic
-            , IF(C.feed_id IS NULL, 0, 1) AS isLike
-            FROM feed A
-            INNER JOIN user B
-            ON A.writer_user_id = B.user_id
-            LEFT JOIN feed_like C
-            ON A.feed_id = C.feed_id
-            AND C.user_id = 0
-
-            ORDER BY A.feed_id DESC
-            LIMIT 0,20
-            ) T1
-        INNER JOIN feed_pic T2
-        ON T1.feedId = T2.feed_id
-        LEFT JOIN
-        (SELECT
-        a.feed_id,
-        a.feed_comment_id,
-        a.`comment`,
-        IF(c.nick_name IS NULL, c.uid, c.nick_name) AS commentWriterNm,
-        c.pic AS CommentWriterPic,
-        ROW_NUMBER() OVER (PARTITION BY a.feed_id ORDER BY a.feed_comment_id DESC) AS row_num
-        FROM feed_comment a
-        INNER JOIN user c ON a.user_id = c.user_id) t3
-        ON t1.feedId = t3.feed_id
-        WHERE t3.row_num   <=   4
-        ORDER BY T1.feedId DESC, t3.feed_comment_id DESC
- {executed in 0 msec}
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-1] [jdbc.resultsettable] 
-|-------|---------|---------|---------------------------|-------------|---------|-----------------------------------------|-------|-----------------------------------------|--------|----------------|--------|----------------|-----------------------------------------|--------|
-|feedid |contents |location |createdat                  |writeruserid |writernm |writerpic                                |islike |pic                                      |feed_id |feed_comment_id |comment |commentwriternm |commentwriterpic                         |row_num |
-|-------|---------|---------|---------------------------|-------------|---------|-----------------------------------------|-------|-----------------------------------------|--------|----------------|--------|----------------|-----------------------------------------|--------|
-|14     |12341    |1245     |2025-02-04 11:46:52.694897 |1            |33333    |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |0      |1f0f1a29-2854-44a6-83fa-e8f3e102cf07.png |14      |5               |12314   |33333           |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |1       |
-|14     |12341    |1245     |2025-02-04 11:46:52.694897 |1            |33333    |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |0      |1f0f1a29-2854-44a6-83fa-e8f3e102cf07.png |14      |2               |12341   |33333           |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |2       |
-|14     |12341    |1245     |2025-02-04 11:46:52.694897 |1            |33333    |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |0      |1f0f1a29-2854-44a6-83fa-e8f3e102cf07.png |14      |1               |12341   |33333           |ab284209-a90f-488a-928a-f49e097e0cf1.jpg |3       |
-|-------|---------|---------|---------------------------|-------------|---------|-----------------------------------------|-------|-----------------------------------------|--------|----------------|--------|----------------|-----------------------------------------|--------|
-
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-3] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-2] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-9] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:16 WARN http-nio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/undefined/ab284209-a90f-488a-928a-f49e097e0cf1.jpg.]
-[2025-02-06 10:49:16 WARN http-nio-8080-exec-9] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/1/ab284209-a90f-488a-928a-f49e097e0cf1.jpg.]
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:16 INFO http-nio-8080-exec-7] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjU1NiwiZXhwIjoxNzM4ODA3NzU2LCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.oKcb4xwW9WsOKbYibyb_l7uBjhW__oqIqgOuGndowbmiuyg249Tm6SXYUGOA8EcPRGw5Q23LumjDP27U8zCt0w
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJncmVlbkBncmVlbi5rciIsImlhdCI6MTczODgwNjU1NiwiZXhwIjoxNzM4ODA3NzU2LCJzaWduZWRVc2VyIjoie1wic2lnbmVkVXNlcklkXCI6MSxcInJvbGVzXCI6W1wiUk9MRV9VU0VSXCIsXCJBRE1JTlwiXX0ifQ.oKcb4xwW9WsOKbYibyb_l7uBjhW__oqIqgOuGndowbmiuyg249Tm6SXYUGOA8EcPRGw5Q23LumjDP27U8zCt0w
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [com.green.greengram.feed.FeedController] feedC postFeed p: FeedPostReq(contents=14151, location=12451, writerUserId=0, feedId=0)
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [com.green.greengram.feed.FeedService] service FeedPostReq(contents=14151, location=12451, writerUserId=0, feedId=0)
-[2025-02-06 10:49:44 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
-1. insert into feed (contents,created_at,location,updated_at,writer_user_id) values ('14151','02/06/2025 10:49:44.706','12451','02/06/2025 10:49:44.706',1)
- {executed in 1 msec}
-[2025-02-06 10:49:44 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
-1. getGeneratedKeys on query: insert into feed (contents,created_at,location,updated_at,writer_user_id) values ('14151','02/06/2025 10:49:44.706','12451','02/06/2025 10:49:44.706',1)
- {executed in 0 msec}
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
-|----------|
-|insert_id |
-|----------|
-|15        |
-|----------|
-
-[2025-02-06 10:49:44 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select fp1_0.feed_id,fp1_0.pic,fp1_0.created_at,f1_0.feed_id,f1_0.contents,f1_0.created_at,f1_0.location,f1_0.updated_at,f1_0.writer_user_id,wu1_0.user_id,wu1_0.created_at,wu1_0.nick_name,wu1_0.pic,wu1_0.uid,wu1_0.updated_at,wu1_0.upw from feed_pic fp1_0 join feed f1_0 on f1_0.feed_id=fp1_0.feed_id left join user wu1_0 on wu1_0.user_id=f1_0.writer_user_id where (fp1_0.feed_id,fp1_0.pic) in ((15,'0de7fc7f-a4a0-43e5-badb-685813a0aefb.jpg'))
- {executed in 0 msec}
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-|feed_id |pic |created_at |feed_id |contents |created_at |location |updated_at |writer_user_id |user_id |created_at |nick_name |pic |uid |updated_at |upw |
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-
-[2025-02-06 10:49:44 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select fp1_0.feed_id,fp1_0.pic,fp1_0.created_at,f1_0.feed_id,f1_0.contents,f1_0.created_at,f1_0.location,f1_0.updated_at,f1_0.writer_user_id,wu1_0.user_id,wu1_0.created_at,wu1_0.nick_name,wu1_0.pic,wu1_0.uid,wu1_0.updated_at,wu1_0.upw from feed_pic fp1_0 join feed f1_0 on f1_0.feed_id=fp1_0.feed_id left join user wu1_0 on wu1_0.user_id=f1_0.writer_user_id where (fp1_0.feed_id,fp1_0.pic) in ((15,'aa549d9c-632d-4d01-88ab-1d7d5aa88c8c.png'))
- {executed in 0 msec}
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-|feed_id |pic |created_at |feed_id |contents |created_at |location |updated_at |writer_user_id |user_id |created_at |nick_name |pic |uid |updated_at |upw |
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-
-[2025-02-06 10:49:44 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-1. select fp1_0.feed_id,fp1_0.pic,fp1_0.created_at,f1_0.feed_id,f1_0.contents,f1_0.created_at,f1_0.location,f1_0.updated_at,f1_0.writer_user_id,wu1_0.user_id,wu1_0.created_at,wu1_0.nick_name,wu1_0.pic,wu1_0.uid,wu1_0.updated_at,wu1_0.upw from feed_pic fp1_0 join feed f1_0 on f1_0.feed_id=fp1_0.feed_id left join user wu1_0 on wu1_0.user_id=f1_0.writer_user_id where (fp1_0.feed_id,fp1_0.pic) in ((15,'6a561375-d686-4ea0-a17a-2cae4bf7f35d.png'))
- {executed in 0 msec}
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-8] [jdbc.resultsettable] 
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-|feed_id |pic |created_at |feed_id |contents |created_at |location |updated_at |writer_user_id |user_id |created_at |nick_name |pic |uid |updated_at |upw |
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-|--------|----|-----------|--------|---------|-----------|---------|-----------|---------------|--------|-----------|----------|----|----|-----------|----|
-
-[2025-02-06 10:49:44 DEBUGhttp-nio-8080-exec-8] [jdbc.sqltiming]  com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:127)
-1. batching 3 statements:
-1:  insert into feed_pic (created_at,feed_id,pic) values ('02/06/2025 10:49:44.726',15,'0de7fc7f-a4a0-43e5-badb-685813a0aefb.jpg')
-2:  insert into feed_pic (created_at,feed_id,pic) values ('02/06/2025 10:49:44.726',15,'aa549d9c-632d-4d01-88ab-1d7d5aa88c8c.png')
-3:  insert into feed_pic (created_at,feed_id,pic) values ('02/06/2025 10:49:44.726',15,'6a561375-d686-4ea0-a17a-2cae4bf7f35d.png')
- {executed in 0 msec}
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-4] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-1] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-10] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-5] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:49:44 WARN http-nio-8080-exec-10] [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource user/undefined/ab284209-a90f-488a-928a-f49e097e0cf1.jpg.]
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] AuthorizationHeader: null
-[2025-02-06 10:49:44 INFO http-nio-8080-exec-6] [com.green.greengram.config.jwt.TokenAuthenticationFilter] Token: null
-[2025-02-06 10:59:00 INFO SpringApplicationShutdownHook] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
-[2025-02-06 10:59:00 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
-[2025-02-06 10:59:00 INFO SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+[2025-02-12 12:40:35 INFO restartedMain] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-02-12 12:40:35 INFO restartedMain] [com.green.greengram.common.MyFileUtils] MFU 생성자: D:\Students\jang jin seong\download\greengram_jpa
+[2025-02-12 12:40:35 WARN restartedMain] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-02-12 12:40:35 WARN restartedMain] [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationEntryPoint' defined in file [D:\Students\jang jin seong\GreenGramJPAOauth2\build\classes\java\main\com\green\greengram\config\jwt\JwtAuthenticationEntryPoint.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.OAuth2ClientConfiguration$OAuth2ClientWebMvcSecurityConfiguration': Unsatisfied dependency expressed through method 'setAuthorizedClientManager' parameter 0: Error creating bean with name 'OAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'clientRegistrationRepository' defined in class path resource [org/springframework/boot/autoconfigure/security/oauth2/client/servlet/OAuth2ClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository]: Factory method 'clientRegistrationRepository' threw exception with message: tokenUri cannot be empty
+[2025-02-12 12:40:35 INFO restartedMain] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-02-12 12:40:35 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+[2025-02-12 12:40:35 INFO restartedMain] [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.

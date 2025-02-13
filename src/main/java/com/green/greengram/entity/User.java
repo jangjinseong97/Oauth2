@@ -9,7 +9,8 @@ import lombok.Setter;
 @Setter
 public class User extends UpdatedAt{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //IDENTITY auto_increment
+    // TABLE 테이블을 만들어서 시퀀스 생성(테이블에 값을 pk로 쓰고 해당 테이블에 값을 +1)
     private Long userId;
 
     @Column(nullable = false, length = 30, unique = true)
